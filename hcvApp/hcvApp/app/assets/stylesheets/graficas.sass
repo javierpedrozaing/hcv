@@ -1,0 +1,227 @@
+
+$tcolor : #7E9BA0
+$dcolor : #f06292 /* #f57c00 */
+$ccolor : #f06292
+$bcolor: #fff
+
+html,body
+  height: 100%
+  font-family: Roboto
+  font-size: 1em
+  background: linear-gradient(transparent, #f3f3f3 10%, transparent)
+  background-size: 4px
+
+*
+  margin: 0px
+  padding: 0px
+  box-sizing: border-box
+
+.application
+  height: 100%
+  background-size: cover
+  display: flex
+  flex-direction: row
+
+.super-line
+  color: $bcolor
+  text-transform: uppercase
+  font-size: 12px
+  text-align: center
+  position: relative
+  &:before
+    content: ''
+    display: inline-block
+    border-bottom: 1px solid $bcolor
+    margin-bottom: 3px
+    margin-right: 20px
+    width: 80px
+  &:after
+    content: ''
+    display: inline-block
+    border-bottom: 1px solid $bcolor
+    margin-bottom: 3px
+    margin-left: 20px
+    width: 80px
+
+  &.b
+    background: $bcolor
+    color: $tcolor
+    &:before,&:after
+      border-bottom: 1px solid $tcolor
+
+
+.wrapper
+  display: flex
+  width: 100%
+  align-items: stretch
+
+.wrapper > .loading
+  margin: auto
+  width: 200px
+  text-align: center
+  span
+    display: inline-block
+    width: 10px
+    height: 10px
+    border-radius: 50%
+    border: 1px solid #880e4f
+    margin: 0px 10px
+    opacity: .1
+    @for $i from 1 through 5
+      &:nth-child(#{$i})
+        animation: blink 1.3s infinite
+        animation-delay: #{'.' +(($i +2) * 100)}s
+
+@keyframes blink
+  0%
+    opacity: 1
+    background: #880e4f
+  50%
+    opacity: 1
+    background: #fff
+  100%
+    opacity: .1
+    background: #fff
+
+.wrapper > .card
+  margin: auto
+  width: 360px
+  border-radius: 5px 5px 0px 0px
+  background: $ccolor
+  box-shadow: 6px 6px 8px #999
+  .header
+    position: relative
+    display: flex
+    align-items: center
+    flex-direction: column
+    border-radius: 5px 5px 0px 0px
+    height: 200px
+    .avatar, .avatar > img
+      width: 100px
+      height: 100px
+    .avatar
+      overflow: hidden
+      border-radius: 100%
+      border: 3px solid #eee
+      margin: auto
+
+.wrapper > .card > .header
+  background: #fff
+  span.repos-count
+    position: absolute
+    left: 130px
+    top: 90px
+    background: $dcolor
+    color: #fff
+    font-size: 12px
+    font-weight: bold
+    display: block
+    width: 28px
+    height: 28px
+    border: 2px solid #fff
+    line-height: 24px
+    text-align: center
+    border-radius: 50%
+    &:after
+      content: 'repos'
+      position: absolute
+      color: $tcolor
+      text-transform: uppercase
+      font-size: 8px
+      bottom: -20px
+      left: 0px
+  a.userlink
+    background: $tcolor
+    color: #fff
+    padding: 4px 10px
+    position: absolute
+    right: 0px
+    top: 0px
+    text-decoration: none
+    &:hover
+      background: $dcolor
+    i
+      font-size: 12px
+      margin: 0px 0px 0px 5px
+  .userinfo
+    text-align: center
+    padding: 0px 0px 20px 0px
+    h2
+      color: $tcolor
+    p
+      color: $tcolor
+
+.wrapper > .card > .top-repos
+  display: flex
+  flex-direction: column
+  align-items: stretch
+  padding: 10px 0px 0px 0px
+  background: $ccolor
+  text-align: center
+  .repository
+    margin: 5px 0px
+    flex-grow: 1
+    text-align: center
+    font-size: 16px
+    color: #fff
+    text-decoration: none
+    i
+      display: block
+      margin-bottom: 5px
+      font-size: 8px
+    .title
+      text-transform: uppercase
+      font-size: 12px
+
+
+
+
+.wrapper > .card > .pie-chart-wrap
+  position: relative
+  text-align: center
+  .pie-chart
+    margin-top: 40px
+  .pie-chart-totals
+    position: absolute
+    top: 100px
+    width: 100%
+    color: #fff
+    font-weight: bold
+    font-size: 22px
+    i
+      display: block
+      margin-bottom: 10px
+
+.wrapper > .card > .chart
+  position: relative
+  border: none
+  background: #fff
+  width: 360px
+  overflow: hidden
+  height: 100px
+  canvas
+    border: none
+    position: absolute
+    left: -5px
+    bottom: -9px
+
+.wrapper > .card > .activity-line
+  padding-top: 40px
+
+.wrapper > .card > .totals
+  display: flex
+  flex-direction: row
+  align-items: stretch
+  padding: 10px 0px 5px 0px
+  background: $bcolor
+  & > div
+    &:nth-child(2)
+      border-right: 1px solid #ddd
+      border-left: 1px solid #ddd
+    flex-grow: 1
+    text-align: center
+    font-size: 16px
+    color: $tcolor
+    .desc
+      text-transform: uppercase
+      font-size: 9px
