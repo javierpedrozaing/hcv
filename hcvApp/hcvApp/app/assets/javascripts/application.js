@@ -14,19 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-   $("#menuCel").click(function() {
-   	alert("asdasdasdasdasd");
-           $('.ui.labeled.icon.sidebar').sidebar('toggle',{transition: 'overlay'});
-       });
 
-       $("#contacto").click(function() {
-          $('.ui.basic.modal').modal('show');
-       });
-
-       $(".close").click(function () {
-           $('.ui.basic.modal').modal('hide');
-       });
-
-       $('.ui.sticky')
-        .sticky();
-
+   

@@ -9,6 +9,7 @@
       <script src="http://momentjs.com/downloads/moment.min.js"> </script>
   <title>HcvApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true  %>
   
   <%= csrf_meta_tags %>
 </head>
@@ -17,7 +18,7 @@
 <div class="ui sticky cont">
     <div class="conlogo">
           <%=  image_tag("logohcw.png") %>
-        <div class="menumovil">
+       <div class="menumovil">
             <i class="big grid layout icon" id="menuCel" style="color: #675dc5"></i>
         </div>
     </div>
@@ -25,10 +26,10 @@
     <div class="conmenu">
         <div class="ui inverted segment">
             <div class="ui inverted secondary pointing menu">
-                <a href="" class="item" id="inicio">
+                <a href="<%= index_path %>" class="item" id="inicio">
                   Inicio
                 </a>
-                <a href="" class="item " id="quienes">
+                <a href="<%= quienes_somos_path %>" class="item " id="quienes">
                   Quienes Somos
                 </a>
                 <div id="menuServHover">
@@ -36,12 +37,12 @@
                       Servicios
                     </a>
                     <div id="menuServicios">
-                           <a href="" class="item " >Promocion y Prevencion</a>
-                           <a href="" class="item " >Salud Ocupacional</a>
-                           <a href="" class="item " >Medicina Laboral</a>
+                           <a href="<%= pyp_path %>" class="item " >Promocion y Prevencion</a>
+                           <a href="<%= ocupacional_path %>" class="item " >Salud Ocupacional</a>
+                           <a href="<%= laboral_path %>" class="item " >Medicina Laboral</a>
                     </div>
                 </div>
-                <a href="" class="item " id="red">
+                <a href="<%= red_path %>" class="item " id="red">
                   Red Nacional
                 </a>
                 <a class="item" id="contacto">
@@ -52,13 +53,34 @@
     </div>
 
     <div class="login">
- <%=  image_tag("login.png", width: "100") %></td>
+ <%=  image_tag("login.png", size: "79x30") %></td>
         
     </div>
 </div>
 
-
 <%= yield %>
+
+<div class="ui demo vertical sidebar labeled icon menu pushed left right fixed">
+  <a href="<%= index_path %>" class="item" >
+    Inicio
+  </a>
+  <a href="<%= quienes_somos_path %>" class="item">
+    Quienes Somos
+  </a>
+  <a href="<%= pyp_path %>" class="item">
+    Promoción y Prevención
+  </a>
+  <a href="<%= ocupacional_path %>" class="item">
+    Salud Ocupacional
+  </a>
+  <a href="<%= laboral_path %>" class="item">
+    Medicina Laboral
+  </a>
+  <a href="<%= red_path %>" class="item">
+    Red Nacional
+  </a>
+</div>
+
 
 <div class="ui basic modal">
     <div class="circuloContacto">
@@ -113,9 +135,27 @@
 </div>
 
 
-  <script>
-    
+    <script>
+       $("#menuCel").click(function() {
+        
+           $('.ui.labeled.icon.sidebar').sidebar('toggle',{transition: 'overlay'});
+       });
+
+       $("#contacto").click(function() {
+          $('.ui.basic.modal').modal('show');
+       });
+
+       $(".close").click(function () {
+           $('.ui.basic.modal').modal('hide')
+       });
+
+       $('.ui.sticky')
+        .sticky();
 
     </script>
+
+
 </body>
+
+
 </html>

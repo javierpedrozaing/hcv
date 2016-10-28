@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
 .cont{
 
             top: 0;
@@ -53,7 +55,7 @@
             background-repeat: no-repeat;
             width:100%;
             background-size: 100% 12vw;
-            background-image: url('img/pie.png');
+            background-image: url('pie.png');
         }
         .pieCel p {
             color: #fff;
@@ -99,7 +101,7 @@
         }
         #menuServHover:hover #menuServicios {
             display: block;
-          position: relative;
+          position: absolute;
         }
         .menumovil{
             display: none;
@@ -107,7 +109,7 @@
         .circuloContacto{
             width: 570px;
             height: 570px;
-            background-image: url('img/iconocitaazulgrande.png');
+            background-image: url('iconocitaazulgrande.png');
             background-size: cover;
             margin: auto;
         }
@@ -192,14 +194,7 @@
     .cont{
         position: relative;
     }
-    body{
-        
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        background-repeat: no-repeat ;
-    }
+ 
     .contenedorcurculos{
         position: fixed;
         display: flex;
@@ -211,21 +206,21 @@
         width: 1000px;
     }
     .circulo1{
-        background-image: url('img/iconocitaazul.png');
+        background-image: url('iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
         cursor: pointer;
     }
     .circulo2{
-        background-image: url('img/iconocitaazul.png');
+        background-image: url('iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
         cursor: pointer;
     }
     .circulo3{
-        background-image: url('img/iconocitaazul.png');
+        background-image: url('iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
@@ -255,7 +250,7 @@
             height: 245px;
             background-size: cover;
             background-position: center center;
-            background-image: url("img/fondoinicio.jpg");
+            background-image: url("fondoinicio.jpg");
         }
         .copyCel{
             display: none;

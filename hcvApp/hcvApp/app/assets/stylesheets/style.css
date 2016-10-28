@@ -31,3 +31,7 @@
 .ui.menu {
     font-size: 1.3rem;
 }
+
+.ui.grid.segment{
+    border:none;
+}
