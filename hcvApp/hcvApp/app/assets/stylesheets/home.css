@@ -41,7 +41,7 @@
 
 
     .pieCel{
-        display: none;
+        /*display: none; */
     }
     .cont{
         position: relative;

@@ -1,0 +1,1011 @@
+ <style>
+    .cuadro{
+        width: 100%;
+    }
+    .encabezado{
+        width: 100%;
+        background: #675dc5;
+        border-bottom: solid  rgb(0,154,222) 10px;
+        padding: 50px 10px;
+    }
+    .tituloencabezado{
+        text-align: center;
+        color: #fff;
+        border-bottom: solid #fff 1px;
+        width:50%;
+        margin: auto;
+        padding: 5px 0;
+        text-shadow: 1px 1px 4px black;
+    }
+    .circulo{
+        margin: 0;
+        width: 5px;
+        height: 5px;
+        border: solid #fff 1px;
+    }
+    .ui.table{
+        margin: auto;
+        width: 85%;
+    }
+    .ui.grid>*{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .buscador{
+        width: 85%;
+        margin: auto;
+        padding-top:20px;
+        padding-bottom: 10px;
+        display: flex;
+    }
+    .ui.table thead th {
+        background-color:#675dc5;
+        color: #fff;
+        text-align: center;
+    }
+    .espacio{
+        margin-right: 50px
+    }
+    .botonesnormal{
+        display: flex;
+    }
+    .botonescelular{
+        display: none;
+    }
+    .contetabla{
+        width: 85%;
+        margin: auto;
+    }
+    .headtabla{
+        display: flex;
+    }
+    .headtabla > div{
+        width: 25%;
+        border-left: 1px solid rgba(34,36,38,.1);
+    }
+    .fila{
+        text-align: center;
+        background-color:#675dc5;
+        color: #fff;
+        padding: 10px 20px;
+        font-weight:bold;
+        font-size: 1em;
+    }
+
+    .ui.search .prompt {
+        border-radius: 0.3rem;
+    }
+
+    i.inverted.bordered.violet.icon, i.inverted.circular.violet.icon
+    {
+        background-color: #675dc5!important;
+        color: #FFF!important;
+        cursor: pointer;
+    }
+    tbody > tr{
+        text-align: center;
+    }
+    td > i{
+        color: #675dc5;
+        cursor: pointer;
+    }
+    .tablacelular{
+            display: none;
+        }
+    .tablapc{
+        display: block;
+        width: 100%;
+       }
+    .ui.grid{
+        height: 10%;
+    }
+    .ui.grid>.column:not(.row) {
+        padding-top: 0.2rem;
+        padding-bottom: 1rem;
+    }
+    .ui.grid+.grid {
+    margin-top: 1.3rem;
+    }
+    .contenidopc{
+        display: block;
+    }
+    .contenidomovil{
+            display: none;
+        }
+    @media (max-width: 800px) {
+
+         .contenidopc{
+        display: none;
+    }
+        .buscador{
+            display: block;
+        }
+        #reporte{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        #consultorio{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        #buscador{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .espacio{
+            margin: 0;
+        }
+        .botonesnormal{
+            display: none;
+        }
+        .botonescelular{
+            display: flex;
+        }
+        .tablacelular{
+            display: block;
+            margin-top: 5%;
+        }
+        .tablapc{
+            display: none;
+        }
+        .contenidomovil{
+            display: block;
+        }
+
+    }
+
+    </style>
+
+  <div class="ui container grid segment" style="margin-top: 0;">
+
+        <div class="encabezado">
+            <h1 class="tituloencabezado">Reservación de cita</h1>
+        </div>
+
+    <div class="contenidopc">
+
+        <div class="formulariopc" style="width: 90%;margin-left: 5%;margin-top: 3%;background-color: #b6aae3;border-radius: 10px; ">
+            <div style="width: 49%;display: inline-block;">
+                <div style="width: 30%; margin-left: 9%; border-bottom: solid white; margin-top: 3%; font-size: 20px;">
+                    <label style="color: white; font-size: 14px;">Datos Basicos</label>
+                </div>
+                <div class="ui container" style="width: 88%;margin: auto; padding: 15px" >
+
+                    <div class="ui small form">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Nombre y Apellido</label>
+                          <input placeholder="First Name" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ui tiny form" style="display: inline-block; width: 45%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Tipo de Documento</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Cdula de Ciudadania</div>
+                                    <div class="item" data-value="0">Cédula de Extranjeria</div>
+                                    <div class="item" data-value="0">Tarjeta de Identidad</div>
+                                    <div class="item" data-value="0">Pasaporte</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="ui small form" style="display: inline-block; width: 49%;margin-left: 5%;">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Documento</label>
+                          <input placeholder="Documento" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block;width: 45%">
+                      <div class="two fields">
+                        <div class="field"  style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Fecha de Nacimiento</label>
+                          <input placeholder="Fecha" type="date">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block; width: 49%;margin-left: 5%;">
+                      <div class="two fields">
+                        <div class="field"  style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Lugar de Nacimiento</label>
+                          <input placeholder="Lugar de Nacimiento" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block;width: 45%">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Años / Edad</label>
+                          <input placeholder="Años / Edad" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ui tiny form" style="display: inline-block; width: 49%;margin-left: 5%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Genero</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Masculino</div>
+                                    <div class="item" data-value="0">Femenino</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ui small form">
+                      <div class="two fields">
+                        <div class="field"  style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Dirección</label>
+                          <input placeholder="Dirección" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block; width: 45%;">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Teléfono</label>
+                          <input placeholder="Teléfono" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block; width: 49%;margin-left: 5%;">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Celular</label>
+                          <input placeholder="Celular" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                     <div class="ui tiny form" style="display: inline-block; width: 45%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Estado Civil</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Soltero</div>
+                                    <div class="item" data-value="0">Casado</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+
+                     <div class="ui tiny form" style="display: inline-block; width: 49%;margin-left: 5%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Nivel Educativo</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Bachiller</div>
+                                    <div class="item" data-value="0">Universitario</div>
+                                    <div class="item" data-value="0">Maestria</div>
+                                    <div class="item" data-value="0">Doctorado</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 576px;width: 1%;border-right: solid #675dc5;display: inline-block;vertical-align: top;margin-top: 4%;"></div>
+            <div style="width: 49%;display: inline-block; vertical-align: top;margin-top: 3.5%;">
+                 <div class="ui container" style="width: 88%;margin: auto; padding: 15px" >
+                     <div class="ui small form">
+                          <div class="two fields">
+                            <div class="field" style="width: 100%;">
+                              <label style="color: white; font-size: 14px;">Cliente</label>
+                              <input placeholder="Cliente" type="text">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="border-bottom: solid white;width: 38%;margin-top: 8%;margin-bottom: 7.5%;">
+                            <label style="color: white; font-size: 14px;; font-size: 20px;">Genera tu Cita</label>
+                        </div>
+                         <div class="ui tiny form">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Consultorio</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Consultorio</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+                         <div class="ui tiny form" style="margin-top: 4%;">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Salud Ocupacional</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Salud Ocupacional</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+                         <div class="ui tiny form" style="margin-top: 4%;">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Ingreso</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Ingreso</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+
+                         <div class="ui tiny form" style="margin-top: 4%;">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Perfil</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Perfil</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                 </div>
+            </div>
+        </div>
+
+        <div style="margin-left: 46%; margin-top: 2%">
+              <button class="ui primary button" style="background-color:#675dc5; height: 100px; width: 102px; border-radius: 100%;text-align: left">GENERAR</button>
+        </div>
+
+        <div style="width: 86.5%; margin-left: 8.3%; margin-top: 2%;">
+
+            <h1 style="margin-bottom: 4%"> CITAS DISPONIBLES</h1>
+            <div class="ui grid">
+              <div class="four wide column" style="border:none; margin-right: 1%;background-color: #675dc5;border-radius: 4px;">
+                    <label style="color: white">Nombre del Médico</label>
+              </div>
+              <div class="four wide column" style="border:none; margin-right: 1%;background-color: #675dc5;border-radius: 4px;">
+                    <label style="color: white">Consultorio</label>
+              </div>
+              <div class="two wide column" style="border:none; margin-right: 1%;background-color: #675dc5;border-radius: 4px;">
+                    <label style="color: white">Fecha</label>
+              </div>
+              <div class="two wide column" style="border:none; margin-right: 1%;background-color: #675dc5;border-radius: 4px;">
+                    <label style="color: white">Hora</label>
+              </div>
+              <div class="two wide column" style="border:none; margin-right: 1%;background-color: #675dc5;border-radius: 4px;">
+                    <label style="color: white;">Reserva</label>
+              </div>
+              <div class="one wide column"></div>
+
+            </div>
+
+
+            <div class="ui grid tiny" >
+              <div class="four wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>Liz Angelica Vargas Gamba</label>
+              </div>
+              <div class="four wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>Clinica el Chico</label>
+              </div>
+              <div class="two wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>02/10/15</label>
+              </div>
+              <div class="two wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>15:00</label>
+              </div>
+              <div class="two wide column" style=" margin-right: 1%; margin-top: 1%;background-color:#675dc5; color: white;padding-bottom: 20px;" id="reservarcita1">
+                    <label style="font-size: 14px;">Reserva</label>
+              </div>
+              <div class="one wide column" style="margin-top: 1%;">
+                  <div class="ui icon " data-tooltip="Eliminar" id=" ">
+                    <i class="bordered inverted large violet remove icon" style="font-size: 11px; border-radius: 4px;"></i>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="ui grid" style="margin-bottom: 5%">
+              <div class="four wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>Mary Luz Rojas R.</label>
+              </div>
+              <div class="four wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>Clinica el Occidente</label>
+              </div>
+              <div class="two wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>13/10/15</label>
+              </div>
+              <div class="two wide column" style=" margin-right: 1%; margin-top: 1%;font-size: 14px;">
+                    <label>17:00</label>
+              </div>
+              <div class="two wide column" style=" margin-right: 1%; margin-top: 1%;background-color:#675dc5; color: white;padding-bottom: 20px;" id="reservarcita2">
+                    <label style="font-size: 14px;">Reserva</label>
+              </div>
+              <div class="one wide column" style="margin-top: 1%;">
+                  <div class="ui icon " data-tooltip="Eliminar" id=" ">
+                    <i class="bordered inverted large violet remove icon" style="font-size: 11px; border-radius: 4px;"></i>
+                </div>
+              </div>
+
+            </div>
+        </div>
+        <div class="tablapc">
+        <table class="ui selectable celled table" style="margin-bottom: 30px;">
+                   <h1 style="margin-left: 8%;">LISTA DE CITAS GENERADAS</h1>
+          <thead>
+            <tr>
+              <th>Nombre del Medico</th>
+              <th>Consultorio</th>
+              <th>Fecha</th>
+              <th>Hora</th>
+              <th>Asistencia</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr>
+              <td>Liz Angelica Vargas Gamba</td>
+              <td>Clinica el Chico</td>
+              <td>02/10/15</td>
+              <td>15:00</td>
+              <td><i class="check square icon" style="font-size: 22px;"></i></td>
+            </tr>
+            <tr>
+              <td>Mary Luz Rojas R.</td>
+              <td>Clinica el Occidente</td>
+              <td>13/10/15</td>
+              <td>17:00</td>
+              <td><i class="hourglass full icon" style="font-size: 22px;"></i></td>
+            </tr>
+            <tr>
+              <td>Liz Angelica Vargas Gamba</td>
+              <td>Clinica el Chico</td>
+              <td>02/10/15</td>
+              <td>15:00</td>
+              <td><i class="bordered inverted large violet remove icon" style="font-size: 11px; border-radius: 4px;"></i></td>
+            </tr>
+            <tr>
+              <td>Mary Luz Rojas R.</td>
+              <td>Clinica el Occidente</td>
+              <td>13/10/15</td>
+              <td>17:00</td>
+              <td><i class="check square icon" style="font-size: 22px;"></i></td>
+            </tr>
+            <tr>
+              <td>Mary Luz Rojas R.</td>
+              <td>Clinica el Occidente</td>
+              <td>13/10/15</td>
+              <td>17:00</td>
+              <td><i class="hourglass full icon" style="font-size: 22px;"></i></td>
+            </tr>
+            <tr>
+              <td>Liz Angelica Vargas Gamba</td>
+              <td>Clinica el Chico</td>
+              <td>02/10/15</td>
+              <td>15:00</td>
+              <td><i class="bordered inverted large violet remove icon" style="font-size: 11px;  border-radius: 4px;"></i></td>
+            </tr>
+            <tr>
+              <td>Mary Luz Rojas R.</td>
+              <td>Clinica el Occidente</td>
+              <td>13/10/15</td>
+              <td>17:00</td>
+              <td><i class="check square icon" style="font-size: 22px;"></i></td>
+            </tr>
+            <tr>
+              <td>Liz Angelica Vargas Gamba</td>
+              <td>Clinica el Chico</td>
+              <td>02/10/15</td>
+              <td>15:00</td>
+              <td><i class="check square icon" style="font-size: 22px;"></i></td>
+            </tr>
+            <tr>
+              <td>Mary Luz Rojas R.</td>
+              <td>Clinica el Occidente</td>
+              <td>13/10/15</td>
+              <td>17:00</td>
+              <td><i class="check square icon" style="font-size: 22px;"></i></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+    </div>
+
+    <div class="contenidomovil">
+        <div class="formulariopc" style="width: 90%;margin-left: 5%;margin-top: 3%;background-color: #b6aae3;border-radius: 10px; ">
+
+                <div style="width: 30%; margin-left: 9%; border-bottom: solid white; margin-top: 3%; font-size: 20px;padding-top: 10%;">
+                    <label style="color: white; font-size: 14px;">Datos Basicos</label>
+                </div>
+
+                <div class="ui container" style="width: 88%;margin: auto; padding: 15px" >
+
+                    <div class="ui small form">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Nombre y Apellido</label>
+                          <input placeholder="First Name" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ui tiny form" style="display: inline-block; width:100%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Tipo de Documento</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Cdula de Ciudadania</div>
+                                    <div class="item" data-value="0">Cédula de Extranjeria</div>
+                                    <div class="item" data-value="0">Tarjeta de Identidad</div>
+                                    <div class="item" data-value="0">Pasaporte</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="ui small form" style="display: inline-block; width: 100%;">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Documento</label>
+                          <input placeholder="Documento" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block;width: 100%">
+                      <div class="two fields">
+                        <div class="field"  style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Fecha de Nacimiento</label>
+                          <input placeholder="Fecha" type="date">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block; width:100%;">
+                      <div class="two fields">
+                        <div class="field"  style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Lugar de Nacimiento</label>
+                          <input placeholder="Lugar de Nacimiento" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block;width: 100%">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Años / Edad</label>
+                          <input placeholder="Años / Edad" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="ui tiny form" style="display: inline-block; width: 100%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Genero</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Masculino</div>
+                                    <div class="item" data-value="0">Femenino</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ui small form">
+                      <div class="two fields">
+                        <div class="field"  style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Dirección</label>
+                          <input placeholder="Dirección" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block; width: 100%;">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Teléfono</label>
+                          <input placeholder="Teléfono" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="ui small form" style="display: inline-block; width: 100%">
+                      <div class="two fields">
+                        <div class="field" style="width: 100%">
+                          <label style="color: white; font-size: 14px;;">Celular</label>
+                          <input placeholder="Celular" type="text">
+                        </div>
+                      </div>
+                    </div>
+
+
+                     <div class="ui tiny form" style="display: inline-block; width: 100%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Estado Civil</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Soltero</div>
+                                    <div class="item" data-value="0">Casado</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+
+                     <div class="ui tiny form" style="display: inline-block; width:100%;">
+                        <div class="two fields">
+                          <div class="field" style="width: 100%">
+                            <label style="color: white; font-size: 14px;;">Nivel Educativo</label>
+                            <div class="ui selection dropdown">
+                                  <input type="hidden" name="gender">
+                                  <i class="dropdown icon"></i>
+                                  <div class="default text"> </div>
+                                  <div class="menu">
+                                    <div class="item" data-value="1">Bachiller</div>
+                                    <div class="item" data-value="0">Universitario</div>
+                                    <div class="item" data-value="0">Maestria</div>
+                                    <div class="item" data-value="0">Doctorado</div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                     <div class="ui small form">
+                          <div class="two fields">
+                            <div class="field" style="width: 100%;">
+                              <label style="color: white; font-size: 14px;">Cliente</label>
+                              <input placeholder="Cliente" type="text">
+                            </div>
+                          </div>
+                        </div>
+
+                        <div style="border-bottom: solid white;width: 55%;margin-top: 8%;margin-bottom: 7.5%;">
+                            <label style="color: white; font-size: 14px;; font-size: 20px;">Genera tu Cita</label>
+                        </div>
+                         <div class="ui tiny form">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Consultorio</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Consultorio</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+                         <div class="ui tiny form" style="margin-top: 4%;">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Salud Ocupacional</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Salud Ocupacional</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+                         <div class="ui tiny form" style="margin-top: 4%;">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Ingreso</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Ingreso</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+
+
+
+                         <div class="ui tiny form" style="margin-top: 4%;">
+                            <div class="two fields">
+                              <div class="field"  style="width: 100%;">
+                                <label style="color: white; font-size: 14px;">Perfil</label>
+                                <div class="ui selection dropdown">
+                                      <input type="hidden" name="gender">
+                                      <i class="dropdown icon"></i>
+                                      <div class="default text"> </div>
+                                      <div class="menu">
+                                        <div class="item" data-value="1">Perfil</div>
+                                      </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                 </div>
+
+        </div>
+        <div style=" margin-left: 38%; margin-top: 2%">
+              <button class="ui primary button" style="background-color:#675dc5; height: 100px; width: 102px; border-radius: 100%;text-align: left">GENERAR</button>
+        </div>
+
+            <div class="tablacelular">
+                    <table class="ui selectable celled table" style="margin-bottom: 30px;">
+                        <h1 style="font-size: 17px;margin-left: 10%;">CITAS DISPONIBLES</h1>
+                          <tbody >
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Liz Angelica Vargas Gamba</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                               <td id="reservarcitamov1" style="margin-top: 2%;"><span style="color: rgba(86, 86, 87, 0.7); font-weight: 100; background-color:#675dc5;color: white;padding-top: 2%;padding-bottom: 3%;padding-right: 5%;padding-left: 5%;border-radius: 5px;">Rerserva</span><i class="bordered inverted large violet remove icon" style="font-size: 15px; border-radius: 4px;margin-left: 2%; margin-top: "></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Mary Luz Rojas R.</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td id="reservarcitamov2" style="margin-top: 2%;"><span style="color: rgba(86, 86, 87, 0.7); font-weight: 100; background-color:#675dc5;color: white;padding-top: 2%;padding-bottom: 3%;padding-right: 5%;padding-left: 5%;border-radius: 5px;">Rerserva</span><i class="bordered inverted large violet remove icon" style="font-size: 15px; border-radius: 4px;margin-left: 2%;margin-top: 5%;"></i></td>
+                            </tr>
+
+                          </tbody>
+                    </table>
+            </div>
+
+            <div class="tablacelular">
+                    <table class="ui selectable celled table" style="margin-bottom: 30px;">
+                        <h1 style="font-size: 17px;margin-left: 10%;">LISTA DE CITAS GENERADAS</h1>
+                          <tbody >
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Liz Angelica Vargas Gamba</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="check square icon" style="font-size: 22px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Mary Luz Rojas R.</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="bordered hourglass full icon" style="font-size: 22px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Liz Angelica Vargas Gamba</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="bordered inverted large violet remove icon" style="font-size: 11px;border-radius: 5px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Liz Angelica Vargas Gamba</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="check square icon" style="font-size: 22px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Mary Luz Rojas R.</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="hourglass full icon" style="font-size: 22px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Liz Angelica Vargas Gamba</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="bordered inverted large violet remove icon" style="font-size: 11px;border-radius: 5px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Liz Angelica Vargas Gamba</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="check square icon" style="font-size: 22px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Mary Luz Rojas R.</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="hourglass full icon" style="font-size: 22px;"></i></td>
+                            </tr>
+                            <tr style="text-align: justify;margin-left: 7%">
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Nombre del Médico: </span> Liz Angelica Vargas Gamba</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Consultorio: </span>Clinica el Chico</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Fecha: </span>02/10/15</td>
+                              <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;">Hora: </span>15:00</td>
+                              <td ><span style="color:black; font-weight: 100">Asistencia </span><i class="bordered inverted large violet remove icon" style="font-size: 11px;border-radius: 5px;"></i></td>
+                            </tr>
+
+                          </tbody>
+                    </table>
+            </div>
+
+    </div>
+  </div>
+
+    <div class="ui modal" id="crearcita1" style="width: 20%; border-radius: 100%;height: 38%;text-align: center;background-color:#675dc5; margin-left: -6%;">
+     <i class="close icon"></i>
+     <div>
+         <div style="width: 41%;border-bottom: 2px solid white;margin: auto;margin-top: 13%;color: white">
+             <h1>Tu Cita</h1>
+         </div>
+         <div style="margin:auto; margin-top: 6%;width: 69%;">
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Fecha: <span style="color: white;">02/10/15</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Hora: <span style="color: white;">15:00</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Lugar: <span style="color: white;">Clinica del Chico</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Doctora: <span style="color: white;">Martina Lopez</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Consultorio: <span style="color: white;">1</span></label></div>
+            <div style="margin: auto;margin-top: 3%;font-size: 11px;"> <label style="color: white;">Para cancelar la cita debe hacerlo con 24 horas de antisipacion a la hora de la cita</label></div>
+            <div style="margin-top: 11%;"><button class="ui button cerrarmodalcita1" style="background-color: #b6aae3; color: white;">Listo</button></div>
+         </div>
+     </div>
+    </div>
+
+    <div class="ui modal" id="crearcita2" style="width: 20%; border-radius: 100%;height: 38%;text-align: center;background-color:#675dc5; margin-left: -6%;">
+     <i class="close icon"></i>
+     <div>
+         <div style="width: 41%;border-bottom: 2px solid white;margin: auto;margin-top: 13%;color: white">
+             <h1>Tu Cita</h1>
+         </div>
+         <div style="margin:auto; margin-top: 6%;width: 69%;">
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Fecha: <span style="color: white;">13/10/15</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Hora: <span style="color: white;">17:00</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Lugar: <span style="color: white;">Clinica el Occidente</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Doctora: <span style="color: white;">Juana Martinez</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Consultorio: <span style="color: white;">3</span></label></div>
+            <div style="margin: auto;margin-top: 3%;font-size: 11px;"> <label style="color: white;">Para cancelar la cita debe hacerlo con 24 horas de antisipacion a la hora de la cita</label></div>
+            <div style="margin-top: 11%;"><button class="ui button cerrarmodalcita2" style="background-color: #b6aae3; color: white;">Listo</button></div>
+         </div>
+     </div>
+    </div>
+
+
+    <div class="ui modal" id="crearcitamov1" style="width: 89%; border-radius: 100%;height: 50%;text-align: center;background-color:#675dc5; margin-left: -47%;">
+     <i class="close icon"></i>
+     <div>
+         <div style="width: 41%;border-bottom: 2px solid white;margin: auto;margin-top: 13%;color: white">
+             <h1>Tu Cita</h1>
+         </div>
+         <div style="margin:auto; margin-top: 6%;width: 69%;">
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Fecha: <span style="color: white;">02/10/15</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Hora: <span style="color: white;">15:00</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Lugar: <span style="color: white;">Clinica del Chico</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Doctora: <span style="color: white;">Martina Lopez</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Consultorio: <span style="color: white;">1</span></label></div>
+            <div style="margin: auto;margin-top: 3%;font-size: 11px;"> <label style="color: white;">Para cancelar la cita debe hacerlo con 24 horas de antisipacion a la hora de la cita</label></div>
+            <div style="margin-top: 11%;"><button class="ui button cerrarmodalcita1" style="background-color: #b6aae3; color: white;">Listo</button></div>
+         </div>
+     </div>
+    </div>
+
+    <div class="ui modal" id="crearcitamov2" style="width: 89%; border-radius: 100%;height: 50%;text-align: center;background-color:#675dc5; margin-left: -47%;">
+     <i class="close icon"></i>
+     <div>
+         <div style="width: 41%;border-bottom: 2px solid white;margin: auto;margin-top: 13%;color: white">
+             <h1>Tu Cita</h1>
+         </div>
+         <div style="margin:auto; margin-top: 6%;width: 69%;">
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Fecha: <span style="color: white;">13/10/15</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Hora: <span style="color: white;">17:00</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Lugar: <span style="color: white;">Clinica el Occidente</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Doctora: <span style="color: white;">Juana Martinez</span></label></div>
+            <div style="margin-top: 2%; font-size: 17px;text-align: justify;"> <label style="color: #999999;">Consultorio: <span style="color: white;">3</span></label></div>
+            <div style="margin: auto;margin-top: 3%;font-size: 11px;"> <label style="color: white;">Para cancelar la cita debe hacerlo con 24 horas de antisipacion a la hora de la cita</label></div>
+            <div style="margin-top: 11%;"><button class="ui button cerrarmodalcita2" style="background-color: #b6aae3; color: white;">Listo</button></div>
+         </div>
+     </div>
+    </div>
+
+    <script>
+        $('#reservarcita1').click(function () {
+             $('#crearcita1').modal({inverted: true}).modal('show');
+        });
+        $('#reservarcita2').click(function () {
+             $('#crearcita2').modal({inverted: true}).modal('show');
+        });
+        $('#reservarcitamov1').click(function () {
+             $('#crearcitamov1').modal({inverted: true}).modal('show');
+        });
+        $('#reservarcitamov2').click(function () {
+             $('#crearcitamov2').modal({inverted: true}).modal('show');
+        });
+        $('.cerrarmodalcita1').click(function () {
+             $('#crearcita1').modal({inverted: true}).modal('hide');
+        });
+        $('.cerrarmodalcita2').click(function () {
+             $('#crearcita2').modal({inverted: true}).modal('hide');
+        });
+        $('.ui.dropdown').dropdown();
+    </script>
+
+
+

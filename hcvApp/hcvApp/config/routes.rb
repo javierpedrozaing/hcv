@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'cliente/agendacitas'
+
+  get 'administrador/medico' => "administrador#admin_medico"
+
+  get 'administrador/medico/:id' => "administrador#medico"
+  get "administrador/perfiles" => "administrador#perfiles"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,6 +16,9 @@ Rails.application.routes.draw do
   get "ocupacional" => "home#ocupacional" , as: 'ocupacional' 
   get "laboral" => "home#laboral" , as: 'laboral' 
   get "red" => "home#red" , as: 'red' 
+
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

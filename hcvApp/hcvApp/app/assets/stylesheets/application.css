@@ -189,7 +189,7 @@
 
 /* el que estaba en visual / index.html*/
  .pieCel{
-        display: none;
+        /*display: none;*/
     }
     .cont{
         position: relative;

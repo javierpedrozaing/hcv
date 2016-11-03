@@ -1,0 +1,294 @@
+ <style>
+    .cuadro{
+        width: 100%;
+    }
+    .encabezado{
+        width: 100%;
+        background: #675dc5;
+        border-bottom: solid  rgb(0,154,222) 10px;
+        padding: 50px 10px;
+    }
+    .tituloencabezado{
+        text-align: center;
+        color: #fff;
+        border-bottom: solid #fff 1px;
+        width:50%;
+        margin: auto;
+        padding: 5px 0;
+        text-shadow: 1px 1px 4px black;
+    }
+    .circulo{
+        margin: 0;
+        width: 5px;
+        height: 5px;
+        border: solid #fff 1px;
+    }
+    .ui.table{
+        margin: auto;
+        width: 85%;
+    }
+    .ui.grid>*{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .buscador{
+        width: 85%;
+        margin: auto;
+        padding-top:20px;
+        padding-bottom: 10px;
+        display: flex;
+    }
+    .ui.table thead th {
+        background-color:#675dc5;
+        color: #fff;
+        text-align: center;
+    }
+    .contetabla{
+        width: 85%;
+        margin: auto;
+    }
+    .headtabla{
+        display: flex;
+    }
+    .headtabla > div{
+        width: 25%;
+        border-left: 1px solid rgba(34,36,38,.1);
+    }
+    .fila{
+        text-align: center;
+        background-color:#675dc5;
+        color: #fff;
+        padding: 10px 20px;
+        font-weight:bold;
+        font-size: 1em
+    }
+    #botonCrearUser{
+        cursor: pointer;
+    }
+    .perfilcel{
+        display: none;
+    }
+    .perfilpc{
+          width: 100%;
+        }
+    @media (max-width: 1000px) {
+        .perfilcel{
+            display: block;
+            width: 100%;
+        }
+        .perfilpc{
+            display: none;
+        }
+    }
+
+    </style>
+
+ <div class="ui container grid segment" style="margin-top: 0;">
+
+        <div class="encabezado">
+            <h1 class="tituloencabezado">Creacíon de Perfiles</h1>
+        </div>
+
+        <div class="buscador">
+            <div class="ui search">
+              <div class="ui icon input" >
+                <input class="prompt" type="text" placeholder="Buscar Perfil...">
+                <i class="search icon"></i>
+              </div>
+              <div class="results"></div>
+            </div>
+            <div class="ui icon " data-tooltip="Añadir Nuevo Perfil" id="botonCrearUser">
+             <i class="violet big plus square outline icon" style="margin-top: 5px;"></i>
+            </div>
+        </div>
+
+        <div class="contetabla">
+            <div class="headtabla">
+                <div class="fila">
+                    Tipo de Perfiles
+                </div>
+                <div class="fila">
+                    Caracteristicas
+                </div>
+                <div class="fila">
+                    <i class="large write icon"></i>
+                </div>
+                <div class="fila">
+                    <i class="large remove icon"></i>
+                </div>
+            </div>
+            <div class="bodytabla">
+                <div class="fila1"></div>
+                <div class="fila2"></div>
+                <div class="fila3"></div>
+                <div class="fila4"></div>
+            </div>
+
+        </div>
+
+
+        <table class="ui selectable celled table" style="margin-bottom: 30px;">
+          <thead>
+            <tr>
+              <th>Tipo de Perfiles</th>
+              <th>Caracteristicas</th>
+              <th><i class="big write icon"></i></th>
+              <th><i class="big remove icon"></i></th>
+            </tr>
+          </thead>
+        </table>
+        <div class="perfilpc">
+            <table class="ui selectable celled table" style="margin-bottom: 30px;">
+              <thead>
+                <tr>
+                  <th>Tipo de Perfiles</th>
+                  <th>Caracteristicas</th>
+                  <th><i class="big write icon"></i></th>
+                  <th><i class="big remove icon"></i></th>
+                </tr>
+              </thead>
+              <tbody >
+                {% for p in perfiles %}
+                <tr>
+                  <td>{{ p.nombre }}</td>
+                  <td>
+                      {% for ex in p.examenes_set.all %}
+                          {{ ex.nombre }},
+                      {% endfor %}
+                  </td>
+                  <td>None</td>
+                  <td>None</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+
+        <div class="perfilcel">
+                <table class="ui selectable celled table" style="margin-bottom: 30px;">
+                  <tbody >
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>John</td>
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>No Action</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"><i class="big write icon"></i></span>None</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"><i class="big remove icon"></i></span>None</td>
+                    </tr>
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>John</td>
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>No Action</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"><i class="big write icon"></i></span>None</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"><i class="big remove icon"></i></span>None</td>
+                    </tr>
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>John</td>
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>No Action</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big write icon"></i></span>None</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big remove icon"></i></span>None</td>
+                    </tr>
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>John</td>
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>No Action</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big write icon"></i></span>None</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big remove icon"></i></span>None</td>
+                    </tr>
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>Jamie</td>
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>Approved</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big write icon"></i></span>Requires call</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big remove icon"></i></span>Requires call</td>
+                    </tr>
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>Jill</td>
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>Denied</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big write icon"></i></span>None</td>
+                      <td> <span style="color: rgba(86, 86, 87, 0.7);"><i class="big remove icon"></i></span>None</td>
+                    </tr>
+                    <tr class="warning" style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>John</td>
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>No Action</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big write icon"></i></span>None</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big remove icon"></i></span>None</td>
+                    </tr>
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>Jamie</td>
+                      <td class="positive" style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>Approved</td>
+                      <td class="warning"><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big write icon"></i></span>Requires call</td>
+                      <td class="warning"> <span style="color: rgba(86, 86, 87, 0.7);"><i class="big remove icon"></i></span>Requires call</td>
+                    </tr>
+                    <tr style="margin-left: 17%;">
+                      <td style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px;">Tipo de Perfiles:</span>Jill</td>
+                      <td class="negative" style="color: rgba(86, 86, 87, 0.7); font-weight: 100"><span style="color:black;padding-right: 5px">Caracteristicas:</span>Denied</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big write icon"></i></span>None</td>
+                      <td><span style="color: rgba(86, 86, 87, 0.7);"> <i class="big remove icon"></i></span>None</td>
+                    </tr>
+                  </tbody>
+                </table>
+        </div>
+    </div>
+
+
+    <div class="ui modal" id="crearuser">
+      <i class="close icon"></i>
+      <div class="header" style="background-color: #675dc5; color: #fff;">
+        Nuevo Perfil
+      </div>
+
+        <form action="/administrador/perfil/" method="post">
+            {% csrf_token %}
+        <div class="ui container" style="width: 88%;margin: auto; padding: 15px" >
+            <div class="ui small form">
+              <div class="two fields">
+                <div class="field">
+                  <label>Nombre</label>
+                  <input placeholder="First Name" type="text" name="nombre">
+                </div>
+
+              </div>
+            </div>
+        </div>
+        <table class="ui unstackable table" style="margin-bottom: 20px;">
+          <thead>
+            <tr>
+              <th class="left aligned">Tipo de Examen</th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for e in examenes %}
+            <tr>
+              <td>{{ e.nombre }}</td>
+              <td>
+                  <div class="ui fitted checkbox">
+                    <input type="checkbox" name="{{ e.nombre }}" value="{{ e.nombre }}">
+                    <label></label>
+                  </div>
+              </td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancelar
+        </div>
+        <button class="ui positive right labeled icon button">
+            Crear
+          <i class="checkmark icon"></i>
+        </button>
+      </div>
+
+            </form>
+    </div>
+
+    <script>
+        $('#botonCrearUser').click(function () {
+             $('#crearuser').modal({inverted: true}).modal('show');
+        });
+    </script>
+
+
+
