@@ -281,3 +281,172 @@
         }
 
     }
+
+
+/* ANTECEDENTES */    
+    .cuadro{
+        width: 100%;
+    }
+            .line{
+            width:38%;
+            border: solid #675dc5 1px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: -12px;
+        }
+        .circ{
+            width: 10px;
+            height: 10px;
+            background: #675dc5;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: -3px;
+            margin-top: -16px;
+        }
+    .encabezado{
+        width: 100%;
+        background: #675dc5;
+        border-bottom: solid  rgb(0,154,222) 10px;
+        padding: 50px 10px;
+    }
+    .tituloencabezado{
+        text-align: center;
+        color: #fff;
+        border-bottom: solid #fff 1px;
+        width:50%;
+        margin: auto;
+        padding: 5px 0;
+        text-shadow: 1px 1px 4px black;
+    }
+    .circulo{
+        margin: 0;
+        width: 5px;
+        height: 5px;
+        border: solid #fff 1px;
+    }
+    .ui.table{
+        margin: auto;
+        width: 85%;
+    }
+    .ui.grid>*{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .buscador{
+        width: 85%;
+        margin: auto;
+        padding-top:20px;
+        padding-bottom: 10px;
+        
+    }
+    .ui.table thead th {
+        background-color:#675dc5;
+        color: #fff;
+        text-align: center;
+    }
+    .espacio{
+        margin-right: 50px
+    }
+    .botonesnormal{
+        display: flex;
+    }
+    .botonescelular{
+        display: none;
+    }
+    .contetabla{
+        width: 85%;
+        margin: auto;
+    }
+    .headtabla{
+        display: flex;
+    }
+    .headtabla > div{
+        width: 25%;
+        border-left: 1px solid rgba(34,36,38,.1);
+    }
+    .fila{
+        text-align: center;
+        background-color:#675dc5;
+        color: #fff;
+        padding: 10px 20px;
+        font-weight:bold;
+        font-size: 1em;
+    }
+
+    .ui.search .prompt {
+        border-radius: 0.3rem;
+    }
+
+    i.inverted.bordered.violet.icon, i.inverted.circular.violet.icon
+    {
+        background-color: #675dc5!important;
+        color: #FFF!important;
+        cursor: pointer;
+    }
+    tbody > tr{
+        text-align: center;
+    }
+    td > i{
+        color: #675dc5;
+        cursor: pointer;
+    }
+    .imgmedico{
+        margin-top: 30px;
+    }
+    p{
+        color: black;
+    }
+    label{
+        color: black;
+    }
+
+
+        .pc{
+            display: block;
+        }
+        .movil{
+            display: none;
+        }
+
+    @media (max-width: 800px) {
+        .buscador{
+            display: block;
+        }
+        #reporte{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        #consultorio{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        #buscador{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .espacio{
+            margin: 0;
+        }
+        .botonesnormal{
+            display: none;
+        }
+        .botonescelular{
+            display: flex;
+        }
+        .pc{
+            display: none;
+        }
+        .movil{
+            display: block;
+        }
+
+
+    }
+
+    @media(max-width:767px) {
+        #el_busca{
+            border:2px solid transparent !important;
+        }
+    }
+

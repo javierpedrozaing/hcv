@@ -1,10 +1,24 @@
 Rails.application.routes.draw do
   get 'cliente/agendacitas'
 
+  get 'administrador' => "administrador#index"
+  get 'administrador/cliente' => "administrador#clientes"
+  get 'administrador/cliente/:id' => "administrador#detalle_cliente"
   get 'administrador/medico' => "administrador#admin_medico"
 
   get 'administrador/medico/:id' => "administrador#medico"
   get "administrador/perfiles" => "administrador#perfiles"
+
+  get 'autorizador/consulta' => "autorizador#consulta"
+  get 'autorizador/informacioninicial' => "autorizador#informacion_inicial"
+  get 'autorizador/historialocupacional' => "autorizador#historial_ocupacional"
+  get 'autorizador/agenda' => "autorizador#agenda"
+  
+  get 'medico/antecedentes' => "medico#antecedentes"
+  get 'medico/antecedentes1' => "medico#antecedentes1"
+  get 'medico/antecedentes2' => "medico#antecedentes2"
+  get 'medico/antecedentes3' => "medico#antecedentes3"
+  get 'medico/antecedentes4' => "medico#antecedentes4"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

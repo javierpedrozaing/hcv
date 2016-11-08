@@ -1,0 +1,718 @@
+
+    <div class="ui modal" id="alerta_guardar" style="width: 400px; margin-left: -10%">
+      <div class="content" >
+
+        <div class="description">
+          <div class="ui header">
+
+          </div>
+          <p style="text-align: center">
+              El formulario fue diligenciado correctamente. <br>
+                Guardado y Autorizado.
+          </p>
+        </div>
+      </div>
+      <div class="actions" style="background-color: white; border: 0px  ">
+        <div class="ui positive right labeled icon button" style="left: -110px;color: white; background: #675dc5">
+          Listo
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ui container grid segment" style="margin-top: 0;" id="contenedor">
+
+        <div class="encabezado">
+            <h1 class="tituloencabezado">Consulta</h1>
+        </div>
+        <div class="buscador">
+
+
+            <br>
+            <br>
+
+                                       <div class="field" style="width: 100%; text-align: right">
+
+                                                    <div class="ui two column stackable grid" id="seccion_boton">
+                                                       <div class="column" ></div>
+                                                        <div class="column">
+                                                            <div class="ui buttons" >
+                                                              <div><h2 style="color: #675dc5">Historial Ocupacional &nbsp;&nbsp;</h2></div>
+                                                              <div class="ui button" id="UNO">1</div>
+                                                              <div class="ui button" style="border-left: 1px solid #675dc5; background-color: #675dc5; color: white" id="DOS">2</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                       </div>
+
+            <div class="ui inverted segment " id="el_contenido" style="background-color: rgba(255, 255, 255, 1) ;
+            border: 2px solid darkgray;
+            -webkit-box-shadow: -1px 7px 25px 8px rgba(0,0,0,0.08);
+            -moz-box-shadow: -1px 7px 25px 8px rgba(0,0,0,0.08);
+            box-shadow: -1px 7px 25px 8px rgba(0,0,0,0.08);
+            ">
+
+
+                <div class="image content">
+                      <div class="formedico" style="width: 98%; margin: auto; ">
+                          <div class="ui tiny form">
+
+
+                              <div class="ui two column stackable grid">
+
+                            
+                            <div class="column">
+
+                                <div style="border-right: solid  #675dc5 4px;margin-top: 20px" id="el_busca" >
+
+                                    <div style="width: 100%; color: #675dc5">
+                                            <h3 style="font-weight: normal;">Datos Básicos</h3>
+                                            <div class="line"></div>
+                                            <div class="circ"></div>
+                                    </div>
+
+                                    <div class="one field" style="margin-top: -30px;width: 90%">
+
+                                              <div class="field">
+                                                  <div class="ui form">
+                                                      <br><br>
+                                                      <div class="inline fields">
+                                                  <h5 style="color: #675dc5; font-weight: normal;">
+                                                    RIESGO OCUPACIONALES EN EMPRESA ACTUAL Y/O ANTERORES
+                                                  </h5>
+                                                          <div class="field">
+                                                          <div class="ui radio checkbox">
+                                                            <input type="radio" name="frequency">
+                                                            <label>Si</label>
+                                                          </div>
+                                                        </div>
+                                                        <div class="field">
+                                                          <div class="ui radio checkbox">
+                                                            <input type="radio" name="frequency">
+                                                            <label>No</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                              </div>
+
+                                        <div class="field">
+                                             <!--<h4>Si</h4>   <input type="checkbox">     <h4>No</h4> <input type="checkbox">-->
+                                        </div>
+                                    </div>
+
+                                    <br>
+                                     <div class="one fields">
+                                                <select class="ui dropdown" >
+                                                  <option value="Ingreso">Actual / Anterior</option>
+                                                  <option value="Retiro">Actual / Anterior</option>
+                                                </select>
+
+                                         <button class="ui icon button" style="background-color: white; color: #675dc5">
+                                           <i class="add square icon" style="color: #675dc5"></i>
+                                         </button>
+
+                                    </div>
+
+
+                                    <div class="field">
+                                        <h3>Nombre de la empresa en donde presento accidente</h3>
+                                    </div>
+
+
+
+
+                                    <div class="two fields" style="margin-top: -40px">
+                                              <div class="field" style="width: 100%">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">
+                                                      Nombre de la empresa en que labora o laboró
+                                                  </h4>
+                                              </div>
+                                    </div>
+
+                                    <div class="two fields" style="">
+                                              <div class="field" style="width: 93%">
+                                                  <label></label>
+                                                  <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%"  >
+                                              </div>
+                                    </div>
+
+
+
+                                    <div class="two fields" style="margin-top: -5px">
+                                        <div class="two fields">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px">Cargo</h5>
+                                                  </div>
+                                                    <div class="field" style="width: 70%">
+                                                      <label></label>
+                                                      <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                                  </div>
+                                        </div>
+
+                                        <div class="two fields" style="">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px">&nbsp;Tiempo&nbsp;</h5>
+                                                  </div>
+                                                    <div class="field" style="width: 70%">
+                                                      <label></label>
+                                                      <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                                  </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="margin-top: -15px">
+                                        <div class="two fields">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px"></h5>
+                                                  </div>
+                                                    <div class="field" style="width: 50%">
+                                                      <label>Físico</label>
+                                                        <div class="ui selection dropdown" style="min-width: 10% !important; width: 140px;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="Calor">Calor</div>
+                                                                                                    <div class="item" data-value="Frío">Frío</div>
+                                                                                                    <div class="item" data-value="Iluminación">Iluminación</div>
+                                                                                                    <div class="item" data-value="Rad">Rad. Loniz</div>
+                                                                                                    <div class="item" data-value="No">Rad No Loniz</div>
+                                                                                                    <div class="item" data-value="Presión">Presión</div>
+                                                                                                    <div class="item" data-value="Ruido">Ruido</div>
+                                                                                                    <div class="item" data-value="Vibración">Vibración</div>
+                                                                                                  </div>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                        <div class="two fields" style="">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px">&nbsp;&nbsp;</h5>
+                                                  </div>
+                                                    <div class="field" style="width: 70%">
+                                                      <label>Químico</label>
+                                                        <div class="ui selection dropdown" style="min-width: 10% !important; width: 140px;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="Humos">Humos</div>
+                                                                                                    <div class="item" data-value="Gases">Gases y Vapores</div>
+                                                                                                    <div class="item" data-value="Polvos">Polvos</div>
+                                                                                                    <div class="item" data-value="Liquidos">Liquidos</div>
+                                                                                                  </div>
+                                                        </div>                                               </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="margin-top: -15px">
+                                        <div class="two fields">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px"></h5>
+                                                  </div>
+                                                    <div class="field" style="width: 70%">
+                                                      <label>Ergonómico</label>
+                                                        <div class="ui selection dropdown" style="min-width: 10% !important; width: 140px;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="1">Diseño de Puesto</div>
+                                                                                                    <div class="item" data-value="1">Manejo de Cargas</div>
+                                                                                                    <div class="item" data-value="1">Movimientos repetitivos</div>
+                                                                                                    <div class="item" data-value="1">Sentado prolongado</div>
+                                                                                                    <div class="item" data-value="1">De pie prolongado</div>
+                                                                                                  </div>
+                                                        </div>                                                 </div>
+                                        </div>
+                                        <div class="two fields" style="">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px">&nbsp;</h5>
+                                                  </div>
+                                                    <div class="field" style="width: 70%">
+                                                      <label>Seguridad</label>
+                                                        <div class="ui selection dropdown" style="min-width: 10% !important; width: 140px;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="1">Atención Publico</div>
+                                                                                                    <div class="item" data-value="1">Monotonía</div>
+                                                                                                    <div class="item" data-value="1">Sobrecarga Laboral</div>
+                                                                                                    <div class="item" data-value="1">Turnos</div>
+                                                                                                    <div class="item" data-value="1">Relación Interpersonal</div>
+                                                                                                  </div>
+                                                        </div>                                               </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="two fields" style="margin-top: -15px">
+                                        <div class="two fields">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px"></h5>
+                                                  </div>
+                                                    <div class="field" style="width: 70%">
+                                                      <label>Piscolaboral</label>
+                                                        <div class="ui selection dropdown" style="min-width: 10% !important; width: 140px;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="1">si</div>
+                                                                                                    <div class="item" data-value="1">no</div>
+                                                                                                  </div>
+                                                        </div>                                             </div>
+                                        </div>
+                                        <div class="two fields" style="">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px">&nbsp;&nbsp;</h5>
+                                                  </div>
+                                                    <div class="field" style="width: 70%">
+                                                      <label>Biologicos</label>
+                                                        <div class="ui selection dropdown" style="min-width: 10% !important; width: 140px;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="1">si</div>
+                                                                                                    <div class="item" data-value="1"><no></no></div>
+                                                                                                  </div>
+                                                        </div>                                                 </div>
+                                        </div>
+                                    </div>
+
+<br><br>
+
+                                    <div style="width: 100%; color: #675dc5">
+                                            <div class="line"></div>
+                                            <div class="circ"></div>
+                                    </div>
+
+
+
+                                    <div class="one field" style="margin-top: -30px;width: 90%">
+                                              <div class="field">
+                                                  <div class="field">
+                                                  <div class="ui form">
+                                                      <br><br>
+                                                      <div class="inline fields">
+                                                  <h5 style="color: #675dc5; font-weight: normal;">
+                                                    ACCIDENTES DE TRABAJO EN LA EMPRESA
+                                                    ACTUAL O ANTERIORES
+                                                  </h5>
+                                                          <div class="field">
+                                                          <div class="ui radio checkbox">
+                                                            <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" type="radio" name="frequency">
+                                                            <label>Si</label>
+                                                          </div>
+                                                        </div>
+                                                        <div class="field">
+                                                          <div class="ui radio checkbox">
+                                                            <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" type="radio" name="frequency">
+                                                            <label>No</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                              </div>
+
+                                              </div>
+                                        <div class="field">
+                                             <!--<h4>Si</h4>   <input type="checkbox">     <h4>No</h4> <input type="checkbox"> -->
+                                        </div>
+                                        <br>
+                                    </div>
+
+
+                                   <div class="two fields" style="margin-top: -40px">
+                                              <div class="field" style="width: 100%">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">
+                                                    Nombre de la empresa en donde presento accidente
+                                                  </h4>
+                                              </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="">
+                                              <div class="field" style="width: 93%">
+                                                  <label></label>
+                                                  <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+                                    <br>
+
+
+                                    <div class="two fields" style="width: 200px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;margin-top: -5px">Fecha de Evento</h4>
+                                              </div>
+                                              <div class="field" style="width: 43%">
+                                                <label> <br></label>
+                                                 <input placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                                   <div class="three fields">
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input placeholder="Día" type="text" style="width: 25%" >
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;width: 100px" placeholder="Mes" type="text"  >
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;width: 100px" placeholder="Año" type="text"  >
+                                                   </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="margin-top: -25px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Naturaleza de la lesión</h4>
+                                              </div>
+                                              <div class="field" style="width: 43%">
+                                                <label> <br></label>
+                                                 <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="margin-top: -25px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Parte del cuerpo afectada</h4>
+                                              </div>
+                                              <div class="field" style="width: 43%">
+                                                <label> <br></label>
+                                                 <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="margin-top: -25px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Dias de incapacidad</h4>
+                                              </div>
+                                              <div class="field" style="width: 43%">
+                                                <label> <br></label>
+                                                 <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="margin-top: -25px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Secuelas</h4>
+                                              </div>
+                                              <div class="field" style="width: 43%">
+                                                <label> <br></label>
+                                                 <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="column">
+                                <br>
+                                    <div style="width: 100%; color: #675dc5">
+                                            <div class="line"></div>
+                                            <div class="circ"></div>
+                                    </div>
+
+
+                                    <div class="one field" style="margin-top: -30px;width: 90%">
+                                              <div class="field">
+                                                     <div class="field">
+                                                  <div class="ui form">
+                                                      <br><br>
+                                                      <div class="inline fields">
+                                                  <h5 style="color: #675dc5; font-weight: normal;">
+                                                    ENFERMEDAD PROFESIONAL EN EMPRESA    ACTUAL O ANTERIORES
+                                                  </h5>
+                                                          <div class="field">
+                                                          <div class="ui radio checkbox">
+                                                            <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" type="radio" name="frequency">
+                                                            <label>Si</label>
+                                                          </div>
+                                                        </div>
+                                                        <div class="field">
+                                                          <div class="ui radio checkbox">
+                                                            <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" type="radio" name="frequency">
+                                                            <label>No</label>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                              </div>
+
+                                              </div>
+                                        <div class="field">
+                                           <!--  <h4>Si</h4>   <input type="checkbox">     <h4>No</h4> <input type="checkbox"> -->
+                                        </div>
+                                    </div>
+                                    <div class="two fields" style="margin-top: -25px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Cual</h4>
+                                              </div>
+                                              <div class="field" style="width: 100%">
+                                                <label><br></label>
+                                                 <input  style="
+                                                 border-radius: 5px;
+                                                 border: 1px solid #675dc5;
+                                                 text-align: left;
+                                                 width: 80%;
+                                                 margin-left: 2%;"
+
+                                                         placeholder="" type="text"  >
+                                                  <button class="ui icon button" style="background-color: white; color: #675dc5">
+                                                  <i class="add square icon" style="color: #675dc5"></i>
+                                                    </button>
+                                              </div>
+                                    </div>
+
+
+                                    <div class="two fields" style="margin-top: -25px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Descripción</h4>
+                                              </div>
+                                              <div class="field" style="width: 100%">
+                                                <label> <br></label>
+                                                 <input style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;"  placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+                                    <div class="two fields" >
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;margin-top: 6px">Fecha de diagnostico</h4>
+                                              </div>
+                                                   <div class="three fields">
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="Día" type="text" style="width: 25%" >
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="Mes" type="text" style="width: 25%" >
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="Año" type="text" style="width: 25%" >
+                                                   </div>
+                                    </div>
+
+                                <br>
+                                    <div style="width: 100%; color: #675dc5">
+                                            <div class="line"></div>
+                                            <div class="circ"></div>
+                                    </div>
+                                               <div class="field">
+                                                  <label></label>
+                                                  <h5 style="color: #675dc5; font-weight: normal;">
+                                                    INFORMACIÓN OCUPASIONAL
+                                                  </h5>
+                                              </div>
+
+                                   <div class="two fields" style="margin-top: -20px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Cargo</h4>
+                                              </div>
+                                              <div class="field" style="width: 100%">
+                                                <label> <br></label>
+                                                 <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+                                    <div class="two fields" >
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;margin-top: 6px">Fecha de Ingreso</h4>
+                                              </div>
+                                                   <div class="three fields">
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="Día" type="text" style="width: 25%" >
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="Mes" type="text" style="width: 25%" >
+                                                          &nbsp;&nbsp;&nbsp;
+                                                        <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="Año" type="text" style="width: 25%" >
+                                                   </div>
+                                    </div>
+
+                                       <div class="two fields" style="margin-top: -5px">
+                                        <div class="two fields">
+                                                  <div class="field" style="width: 40%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px">Antiguedad</h5>
+                                                  </div>
+                                                    <div class="field" style="width: 40%">
+                                                      <label></label>
+                                                      <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                                  </div>
+                                        </div>
+
+                                        <div class="two fields" style="">
+                                                  <div class="field" style="width: 23%">
+                                                          <h5 style="font-weight: normal;color: black; margin-top: 15px">&nbsp;Años&nbsp;</h5>
+                                                  </div>
+                                                    <div class="field" style="width: 40%">
+                                                      <label></label>
+                                                      <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                                  </div>
+                                        </div>
+                                    </div>
+
+                                   <div class="two fields" style="margin-top: -20px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Lugar de Nacimiento</h4>
+                                              </div>
+                                              <div class="field" style="width: 100%">
+                                                <label> <br></label>
+                                                 <input placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+                                   <div class="two fields" style="margin-top: -20px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Funciones principales</h4>
+                                              </div>
+                                              <div class="field" style="width: 100%">
+                                                <label> <br></label>
+
+                                                 <div class="ui selection dropdown" style="width: 100%;min-width: 10% !important;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="1">Asistencial</div>
+                                                                                                    <div class="item" data-value="1">Operativa</div>
+                                                                                                    <div class="item" data-value="1">Otro</div>
+                                                                                                  </div>
+                                                        </div>
+                                              </div>
+                                    </div>
+
+                                   <div class="two fields" style="margin-top: -20px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Herramientas utilizadas</h4>
+                                              </div>
+                                              <div class="field" style="width: 100%">
+                                                <label> <br></label>
+                                                 <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+                                   <div class="two fields" style="margin-top: -20px">
+                                              <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">Materia prima utilizada</h4>
+                                              </div>
+                                              <div class="field" style="width: 100%">
+                                                <label> <br></label>
+                                                 <input  style="border-radius: 5px; border: 1px solid #675dc5;text-align: left;margin-left: 2%;" placeholder="" type="text" style="width: 100%" >
+                                              </div>
+                                    </div>
+
+                                               <div class="field">
+                                                  <label></label>
+                                                  <h4 style="color: black;font-weight: normal;">
+                                                      USO DE ELEMENTOS DE PROTECCIÓN PERSONAL EN CARGO ACTUAL O ÚLTIMO:</h4>
+                                              </div>
+
+                                   <div class="field" style="margin-top: -20px">
+                                              <div class="field" style="width: 100%">
+                                                <label> <br></label>
+                                            <select class="ui dropdown">
+                                                  <option value="1">elemento A</option>
+                                                  <option value="2">Básica Secundaria</option>
+                                                  <option value="3">Media</option>
+                                                  <option value="4">Técnico</option>
+                                                  <option value="5">Técnologo</option>
+                                                  <option value="6">Profesional</option>
+                                                  <option value="7">PosGrado</option>
+                                                  <option value="8">Ninguno</option>
+                                            </select>
+                                                  <div class="ui selection dropdown" style="min-width: 10% !important; width: 100%;min-height: 1% !important; height: 29px;border: 1px solid #675dc5;">
+                                                                                                  <input type="hidden" name="gender">
+                                                                                                  <i class="dropdown icon"></i>
+                                                                                                  <div class="default text"> </div>
+                                                                                                  <div class="menu">
+                                                                                                    <div class="item" data-value="1">Hijo</div>
+                                                                                                  </div>
+                                                        </div>
+                                          </div>
+                                    </div>
+
+
+
+
+                                <div class="ui stackable grid" id="el_boton"  >
+                                        <div class="center aligned two column row" >
+                                          <div class="column" >
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                          </div>
+                                          <div class="column" >
+                                            <div id="tituloContacto" style="border: 1px solid transparent; margin-top: 40px; cursor: pointer">
+                                                <h5>Guardar y autorizar</h5>
+                                            </div>
+                                          </div>
+                                        </div>
+                                </div>
+
+                                <br> <br>
+                               </div>
+
+                            </div>
+
+
+
+
+                          </div>
+
+                      </div>
+
+                      </div>
+
+                </div>
+
+                    <br><br><br><br>
+
+            </div>
+        </div>
+    </div>
+
+
+<%= render partial: "home/footer" %>
+
+    <script>
+        $('.calendar').click(function () {
+             $('#crearcalendar').modal({inverted: true}).modal('show');
+        });
+
+         $('.modalcompartido').click(function () {
+             $('#modalcrearmedico').modal({inverted: true}).modal('show');
+        });
+
+        $('.ui.dropdown').dropdown();
+
+        $('#tituloContacto').click(function () {
+            $('#alerta_guardar').modal({inverted: true}).modal('show');
+    })
+
+    </script>
+
+
+

@@ -1,0 +1,32 @@
+<p>index</p>
+{#{% for a in dola  %}#}
+{#    <p>{{ a }}</p>#}
+{#{% endfor %}#}
+
+{% for a in var  %}
+    <p>{{ a.nombre }}</p>
+{% endfor %}
+
+
+
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+<table style="width:50%">
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Edad</th>
+  </tr>
+    {% for a in var  %}
+        <tr>
+            <td>{{ a.nombre }}</td>
+            <td>{{ a.apellido }}</td>
+            <td>{{ a.edad }}</td>
+        </tr>
+    {% endfor %}
+
+    </table>

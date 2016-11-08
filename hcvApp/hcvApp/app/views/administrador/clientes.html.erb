@@ -1,0 +1,563 @@
+    <style>
+    .cuadro{
+        width: 100%;
+    }
+    .encabezado{
+        width: 100%;
+        background: #675dc5;
+        border-bottom: solid  rgb(0,154,222) 10px;
+        padding: 50px 10px;
+    }
+    .tituloencabezado{
+        text-align: center;
+        color: #fff;
+        border-bottom: solid #fff 1px;
+        width:50%;
+        margin: auto;
+        padding: 5px 0;
+        text-shadow: 1px 1px 4px black;
+    }
+    .circulo{
+        margin: 0;
+        width: 5px;
+        height: 5px;
+        border: solid #fff 1px;
+    }
+    .ui.table{
+        margin: auto;
+        width: 85%;
+    }
+    .ui.grid>*{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .buscador{
+        width: 85%;
+        margin: auto;
+        padding-top:20px;
+        padding-bottom: 10px;
+        display: flex;
+    }
+    .ui.table thead th {
+        background-color:#675dc5;
+        color: #fff;
+        text-align: center;
+    }
+    .espacio{
+        margin-right: 50px
+    }
+    .botonesnormal{
+        display: flex;
+    }
+    .botonescelular{
+        display: none;
+    }
+    .contetabla{
+        width: 85%;
+        margin: auto;
+    }
+    .headtabla{
+        display: flex;
+    }
+    .headtabla > div{
+        width: 25%;
+        border-left: 1px solid rgba(34,36,38,.1);
+    }
+    .fila{
+        text-align: center;
+        background-color:#675dc5;
+        color: #fff;
+        padding: 10px 20px;
+        font-weight:bold;
+        font-size: 1em;
+    }
+
+    .ui.search .prompt {
+        border-radius: 0.3rem;
+    }
+
+    i.inverted.bordered.violet.icon, i.inverted.circular.violet.icon
+    {
+        background-color: #675dc5!important;
+        color: #FFF!important;
+        cursor: pointer;
+    }
+    tbody > tr{
+        text-align: center;
+    }
+    td > i{
+        color: #675dc5;
+        cursor: pointer;
+    }
+
+
+    @media (max-width: 800px) {
+        .buscador{
+            display: block;
+        }
+        #reporte{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        #consultorio{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        #buscador{
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .espacio{
+            margin: 0;
+        }
+        .botonesnormal{
+            display: none;
+        }
+        .botonescelular{
+            display: flex;
+        }
+
+    }
+
+
+
+    </style>
+
+
+  <div class="ui container grid segment" style="margin-top: 0;">
+
+        <div class="encabezado">
+            <h1 class="tituloencabezado">Clientes</h1>
+        </div>
+
+        <div class="buscador">
+            <div class="ui selection dropdown" style="margin-right: 20px;" id="reporte">
+              <input type="hidden" name="gender">
+              <i class="dropdown icon"></i>
+              <div class="default text">Tipo de Reporte</div>
+              <div class="menu">
+                <div class="item" data-value="1">Example</div>
+                <div class="item" data-value="0">Example</div>
+              </div>
+            </div>
+            <div class="ui selection dropdown" style="margin-right: 20px;" id="consultorio">
+              <input type="hidden" name="gender">
+              <i class="dropdown icon"></i>
+              <div class="default text">Consultorio</div>
+              <div class="menu">
+                <div class="item" data-value="1">Example</div>
+                <div class="item" data-value="0">Example</div>
+              </div>
+            </div>
+            <div class="ui search espacio" >
+              <div class="ui icon input" id="buscador">
+                <input class="prompt" type="text" placeholder="Buscar Perfil..." >
+                <i class="search icon"></i>
+              </div>
+              <div class="results"></div>
+            </div>
+
+            <div class="botonesnormal" >
+                <div class="ui icon modalcompartido " data-tooltip="Crear Cliente">
+                    <i class="bordered inverted violet plus icon" style="margin-top: 5px;"></i>
+                </div>
+
+                <div class="ui icon " data-tooltip="Eliminar" id=" ">
+                    <i class="bordered inverted violet remove icon" style="margin-top: 5px;"></i>
+                </div>
+
+                <div class="ui icon " data-tooltip="Editar" id=" ">
+                    <i class="bordered inverted violet write icon" style="margin-top: 5px;"></i>
+                </div>
+            </div>
+
+            <div class="botonescelular" >
+                <div class="ui icon modalcompartido " data-tooltip="Crear Medico" >
+                    <i class="bordered inverted large violet plus icon" style="margin-top: 5px;"></i>
+                </div>
+
+                <div class="ui icon " data-tooltip="Eliminar" id=" ">
+                    <i class="bordered inverted large violet remove icon" style="margin-top: 5px;"></i>
+                </div>
+
+                <div class="ui icon " data-tooltip="Editar" id=" ">
+                    <i class="bordered inverted large violet write icon" style="margin-top: 5px;"></i>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <table class="ui selectable celled table" style="margin-bottom: 30px;">
+          <thead>
+            <tr>
+              <th>Nombre del Cliente</th>
+              <th>Citas Asignadas</th>
+              <th>Citas Cumplidas</th>
+              <th>Perfil</th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr>
+              <td>
+              <%= image_tag "buho.gif", class:"ui centered tiny image" %>
+              </td>
+              <td>hola</td>
+              <td>poi</td>
+              <td>1.3</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>
+              <%= image_tag "coodontologos.png", class:"ui centered tiny image" %>              
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td></td>
+              <td>None</td>
+              <td>None</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>No Action</td>
+              <td>None</td>
+              <td>None</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>Jamie</td>
+              <td>Approved</td>
+              <td>Requires call</td>
+              <td>Requires call</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>Jill</td>
+              <td>Denied</td>
+              <td>None</td>
+              <td>None</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>John</td>
+              <td>No Action</td>
+              <td>None</td>
+              <td>None</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>Jamie</td>
+              <td class="positive">Approved</td>
+              <td class="warning">Requires call</td>
+              <td class="warning">Requires call</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5">Detalles</button></td>
+            </tr>
+            <tr>
+              <td>Jill</td>
+              <td class="negative">Denied</td>
+              <td>None</td>
+              <td>None</td>
+              <td><button class="ui violet button detalle" style="background: #675dc5" >Detalles</button></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+
+{# Modal Detalle Cliente #}
+
+     <div class="ui modal" id="modaldetalle">
+      <i class="close icon"></i>
+      <div class="header"  style="background-color: #675dc5; color: #fff;">
+        Crear Cliente
+      </div>
+
+      <div class="image content">
+          <div class="formedico" style="width: 98%; margin: auto ">
+              <div class="imgmedico">
+              <%= image_tag "buho.gif", class:"ui small circular image",  style:"margin: auto;border: solid #675dc5 5px;margin-top: -2px;" %>                  
+              </div>
+              <h2 class="ui header">INFORMACIÓN</h2>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Nombre</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+                  <div class="field">
+                    <label>NIT</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Servicios</label>
+                      <input placeholder="Diligenciado" readonly="" type="text">
+                    </div>
+                    <div class="field">
+                      <label>Tarifa</label>
+                      <input placeholder="Diligenciado" readonly="" type="text">
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Banco</label>
+                      <input placeholder="Diligenciado" readonly="" type="text">
+                    </div>
+                    <div class="field">
+                       <label>Tipo de cuenta</label>
+                       <div class="ui selection dropdown disabled">
+                          <input type="hidden" name="gender">
+                           Diligenciado
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1">Corriente</div>
+                            <div class="item" data-value="0">Ahorros</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                    <label>N° de Cuenta</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+                    <div class="field">
+                       <label>Tipo de Negociación</label>
+                       <div class="ui selection dropdown disabled">
+                          <input type="hidden" name="gender">
+                           Diligenciado
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1">Bogota</div>
+                            <div class="item" data-value="0">Medellin</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <h4 class="ui header">DATOS PERSONALES DE CONTACTO</h4>
+
+              <div class="ui tiny form"  style="margin-bottom: 10px;">
+                  <div class="field">
+                    <label>Nombre y Apellido</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Celular</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+                  <div class="field">
+                    <label>E-mail</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Telefono</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+                    <div class="field">
+                    <label>Dirección</label>
+                    <input placeholder="Diligenciado" readonly="" type="text">
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancelar
+        </div>
+        <div class="ui positive right labeled icon button">
+          Crear
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+
+{# Modal Crear Cliente #}
+
+    <div class="ui modal" id="modalcrearmedico">
+      <i class="close icon"></i>
+      <div class="header"  style="background-color: #675dc5; color: #fff;">
+        Crear Cliente
+      </div>
+
+
+
+      <div class="image content">
+          <div class="formedico" style="width: 98%; margin: auto ">
+              <div class="imgmedico">
+                  <div class="editimg" style="width: 34px;margin: auto;">
+                     <i class="bordered inverted violet write icon"></i>
+                  </div>
+                  <img class="ui small circular image" style="margin: auto;border: solid #675dc5 5px;margin-top: -2px;" src="{% static "img/buho.gif" %}">
+                  <div class="ui center aligned segment">
+                    <button class="ui button " style="background: #675dc5; color: #fff;">Desabilitar Usuario</button>
+                  </div>
+              </div>
+              <h2 class="ui header">INFORMACIÓN</h2>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Nombre</label>
+                    <input placeholder=" " type="text">
+                  </div>
+                  <div class="field">
+                    <label>NIT</label>
+                    <input placeholder=" " type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Servicios</label>
+                      <input placeholder=" " type="text">
+                    </div>
+                    <div class="field">
+                      <label>Tarifa</label>
+                      <input placeholder=" " type="text">
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Banco</label>
+                      <input placeholder=" " type="text">
+                    </div>
+                    <div class="field">
+                       <label>Tipo de cuenta</label>
+                       <div class="ui selection dropdown">
+                          <input type="hidden" name="gender">
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1">Corriente</div>
+                            <div class="item" data-value="0">Ahorros</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                    <label>N° de Cuenta</label>
+                    <input placeholder=" " type="text">
+                  </div>
+                    <div class="field">
+                       <label>Tipo de Negociación</label>
+                       <div class="ui selection dropdown">
+                          <input type="hidden" name="gender">
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1">Bogota</div>
+                            <div class="item" data-value="0">Medellin</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <h4 class="ui header">DATOS PERSONALES DE CONTACTO</h4>
+
+              <div class="ui tiny form"  style="margin-bottom: 10px;">
+                  <div class="field">
+                    <label>Nombre y Apellido</label>
+                    <input placeholder=" " type="text">
+                  </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Celular</label>
+                    <input placeholder=" " type="text">
+                  </div>
+                  <div class="field">
+                    <label>E-mail</label>
+                    <input placeholder=" " type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Telefono</label>
+                    <input placeholder=" " type="text">
+                  </div>
+                    <div class="field">
+                    <label>Dirección</label>
+                    <input placeholder=" " type="text">
+                  </div>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancelar
+        </div>
+        <div class="ui positive right labeled icon button">
+          Crear
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <script>
+        $('.detalle').click(function () {
+             $('#modaldetalle').modal({inverted: true}).modal('show');
+        });
+
+         $('.modalcompartido').click(function () {
+             $('#modalcrearmedico').modal({inverted: true}).modal('show');
+        });
+
+        $('.ui.dropdown').dropdown();
+    </script>
