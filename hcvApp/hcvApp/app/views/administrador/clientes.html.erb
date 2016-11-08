@@ -407,7 +407,7 @@
       </div>
     </div>
 
-{# Modal Crear Cliente #}
+
 
     <div class="ui modal" id="modalcrearmedico">
       <i class="close icon"></i>
@@ -423,7 +423,8 @@
                   <div class="editimg" style="width: 34px;margin: auto;">
                      <i class="bordered inverted violet write icon"></i>
                   </div>
-                  <img class="ui small circular image" style="margin: auto;border: solid #675dc5 5px;margin-top: -2px;" src="{% static "img/buho.gif" %}">
+                  
+                  <%= image_tag "buho.gif", class:"ui small circular image",  style:"margin: auto;border: solid #675dc5 5px;margin-top: -2px;" %> 
                   <div class="ui center aligned segment">
                     <button class="ui button " style="background: #675dc5; color: #fff;">Desabilitar Usuario</button>
                   </div>

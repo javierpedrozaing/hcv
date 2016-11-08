@@ -225,7 +225,7 @@
         </div>
     </div>
 
-
+<!--
     <div class="tablacelular">
         <table class="ui selectable celled table" style="margin-bottom: 30px;">
               <thead>
@@ -297,7 +297,7 @@
               </tbody>
             </table>
     </div>
-
+-->
  
 
     <div class="ui modal" id="crearcalendar">
@@ -308,7 +308,7 @@
     <div class="ui container grid" style="padding: 30px" >
         <div class="eight wide column doubling" id="imgleft">
 <div id="contenedorprincipal"></div>
-            <script src="{% static 'js/bundle.js' %}"></script>
+            <script src="../assets/bundle.js"></script>
             <div class="calendar">
                 <div class="ui selection dropdown" style="margin-left: 15px;" >
                   <input type="hidden" name="gender">
@@ -381,7 +381,7 @@
                   </div>
                   <!--<img class="ui small circular image" style="margin: auto;border: solid #675dc5 5px;margin-top: -2px;" src="{% static "img/buho.gif" %}"> -->
 
-                  <%= image_tag "buho.gif", style: "margin: auto;border: solid #675dc5 5px;margin-top: -2px;" %>
+                  <%= image_tag "buho.gif", class:"ui small circular image", style: "margin: auto;border: solid #675dc5 5px;margin-top: -2px;" %>
                   <div class="ui center aligned segment">
                     <button class="ui button " style="background: #675dc5; color: #fff;">Desabilitar Usuario</button>
                   </div>

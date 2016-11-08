@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'administrador/cliente' => "administrador#clientes"
   get 'administrador/cliente/:id' => "administrador#detalle_cliente"
   get 'administrador/medico' => "administrador#admin_medico"
+  post 'administrador/registrar' => "administrador#registrar_medico"
 
   get 'administrador/medico/:id' => "administrador#medico"
   get "administrador/perfiles" => "administrador#perfiles"
