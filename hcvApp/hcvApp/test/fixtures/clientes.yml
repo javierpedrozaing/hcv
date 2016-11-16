@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nit: MyString
+  tarifa: MyString
+  tipo_cuenta: MyString
+  numero_cuenta: 1
+  banco: MyString
+  tipo_negociacion: MyString
+  id_persona: 1
+
+two:
+  nit: MyString
+  tarifa: MyString
+  tipo_cuenta: MyString
+  numero_cuenta: 1
+  banco: MyString
+  tipo_negociacion: MyString
+  id_persona: 1

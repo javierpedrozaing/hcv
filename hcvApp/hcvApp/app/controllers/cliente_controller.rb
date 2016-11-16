@@ -1,4 +1,5 @@
 class ClienteController < ApplicationController
-  def agendacitas
+	
+  def agenda_citas
   end
 end

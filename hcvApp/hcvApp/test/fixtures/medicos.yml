@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo_consulta: MyString
+  consultorio_id: 1
+  tipo_contrato: MyString
+  actividad_economica: MyString
+  banco: MyString
+  tipo_cuenta: MyString
+  numero_cuenta: 1
+  tarifa: MyString
+  horas_salud_ocupacional: 1
+  horas_medicina_laboral: 1
+  activo: false
+
+two:
+  tipo_consulta: MyString
+  consultorio_id: 1
+  tipo_contrato: MyString
+  actividad_economica: MyString
+  banco: MyString
+  tipo_cuenta: MyString
+  numero_cuenta: 1
+  tarifa: MyString
+  horas_salud_ocupacional: 1
+  horas_medicina_laboral: 1
+  activo: false

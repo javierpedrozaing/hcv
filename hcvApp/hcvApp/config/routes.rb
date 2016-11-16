@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'cliente/agendacitas'
+  
+  
+  resources :personas
+
+  get 'cliente/agenda_citas' => 'cliente#agenda_citas', as: 'agendacitas'
+
 
   get 'administrador' => "administrador#index"
   get 'administrador/cliente' => "administrador#clientes"

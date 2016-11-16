@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hora_ingreso: MyString
+  ciudad_ingreso: MyString
+  tipo_examen: MyString
+
+two:
+  hora_ingreso: MyString
+  ciudad_ingreso: MyString
+  tipo_examen: MyString
