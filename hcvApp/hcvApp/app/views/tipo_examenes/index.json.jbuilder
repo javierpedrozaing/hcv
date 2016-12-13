@@ -1,0 +1,1 @@
+json.array! @tipo_examenes, partial: 'tipo_examenes/tipo_examene', as: :tipo_examene

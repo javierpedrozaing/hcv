@@ -1,0 +1,26 @@
+es:
+  error: 'Error'
+  errors: 'Errores'
+  activerecord:
+    errors:
+      messages:
+        record_invalid: '%{errores}:'       
+      models:       
+        persona:
+          attributes:           
+            email:
+              blank: "Debe ingresar un correo electrónico."
+              invalid: "Debe ingresar un correo electrónico válido."
+              taken: "El correo electrónico ingresado ya está asociado a otro usuario en el sistema."
+            password_confirmation:
+              confirmation: "Su contraseña y confirmación de contraseña no coinciden."
+            current_password: 
+              invalid: "La contraseña actual ingresada no es correcta."
+              blank: "Debe ingresar su contraseña actual."
+            password:
+              too_short: "Su contraseña debe contener al menos 8 caracteres."
+              blank: "Debe ingresar una contraseña."
+        perfil:
+          attributes:
+            nombre:
+              blank: "Debe escribir un nombre de perfil"  

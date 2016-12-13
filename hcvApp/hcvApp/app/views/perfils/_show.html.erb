@@ -1,0 +1,51 @@
+   <div class="ui container" style="width: 88%;margin: auto; padding: 15px" >
+            <div class="ui small form">
+              <div class="two fields">
+                <div class="field">                  
+                  <span>nombre</span><br>
+                  <%= @perfil.nombre %>
+                </div>
+
+              </div>
+            </div>
+        </div>
+        <table class="ui unstackable table" style="margin-bottom: 20px;" id="examenes_list">
+          <thead>
+            <tr>
+              <th class="left aligned">Tipo de Examenes</th>
+              <th> </th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            
+            <% @tipo_examenes.each do |examen| %>
+              <tr>
+                <td><%= examen.nombre %></td>
+                <td><input type='checkbox' id='examen_<%= examen.id %>' name="examenes[]" disabled readonly="true" value="<%= examen.id %>" checked></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancelar
+        </div>
+        
+      </div>
+
+   <div class="ui modal" id="modalshowperfil">
+        <i class="close icon"></i>
+        <div class="header"  style="background-color: #675dc5; color: #fff;">
+          Detalles Perfil
+        </div>
+        
+                <div class="modal-body">
+                
+                  <p>One fine body…</p>
+                  
+                </div>
+        
+      
+  </div>

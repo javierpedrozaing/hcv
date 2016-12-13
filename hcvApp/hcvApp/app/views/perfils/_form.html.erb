@@ -1,0 +1,54 @@
+     <%= form_for(@perfil) do |f| %>
+        <% if @perfil.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@perfil.errors.count, "error") %> prohibited this perfil from being saved:</h2>
+
+              <ul>
+              <% @perfil.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+        <% end %>  
+
+        <div class="ui container" style="width: 88%;margin: auto; padding: 15px" >
+            <div class="ui small form">
+              <div class="two fields">
+                <div class="field">                  
+                  <%= f.label :nombre %><br>
+                  <%= f.text_field :nombre %>
+                </div>
+
+              </div>
+            </div>
+        </div>
+        <table class="ui unstackable table" style="margin-bottom: 20px;" id="examenes_list">
+          <thead>
+            <tr>
+              <th class="left aligned">Tipo de Examen</th>
+              <th> </th>
+            </tr>
+          </thead>
+          
+          <tbody>
+            <% @tipo_examenes.each do |examen| %>
+              <tr>
+                <td><%= examen.nombre %></td>
+                <td><input type='checkbox' id='examen_<%= examen.id %>' name="examenes[]" value="<%= examen.id %>"></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+
+      <div class="actions">
+        <div class="ui black deny button">
+          Cancelar
+        </div>
+        <button id="crea_perfil" class="ui positive right labeled icon button">
+            Crear
+          <i class="checkmark icon"></i>
+        </button>
+      </div>
+
+      <% end %>

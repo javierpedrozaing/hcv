@@ -1,23 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nombre: MyString
-  apellidos: MyString
+  nombre_completo: MyString
   edad: 1
   genero: MyString
   direccion: MyString
   telefono: MyString
-  celular: 1
+  celular: MyString
   estado_civil: MyString
-  fecha_nacimiento: 2016-11-15
+  fecha_nacimiento: 2016-11-16
+  lugar_nacimiento: MyString
+  documento: 1
+  tipo_documento: MyString
+  email2: MyString
 
 two:
-  nombre: MyString
-  apellidos: MyString
+  nombre_completo: MyString
   edad: 1
   genero: MyString
   direccion: MyString
   telefono: MyString
-  celular: 1
+  celular: MyString
   estado_civil: MyString
-  fecha_nacimiento: 2016-11-15
+  fecha_nacimiento: 2016-11-16
+  lugar_nacimiento: MyString
+  documento: 1
+  tipo_documento: MyString
+  email2: MyString

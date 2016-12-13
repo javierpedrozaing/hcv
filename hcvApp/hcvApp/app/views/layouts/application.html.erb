@@ -12,12 +12,15 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true  %>
   
   <%= csrf_meta_tags %>
+
+
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+
+
 <div class="ui sticky cont">
     <div class="conlogo">
+
           <%=  image_tag("logohcw.png") %>
        <div class="menumovil">
             <i class="big grid layout icon" id="menuCel" style="color: #675dc5"></i>
@@ -27,7 +30,7 @@
     <div class="conmenu">
         <div class="ui inverted segment">
             <div class="ui inverted secondary pointing menu">
-                <a href="<%= index_path %>" class="item" id="inicio">
+                <a href="<%= admin_index_path %>" class="item" id="inicio">
                   Inicio
                 </a>
                 <a href="<%= quienes_somos_path %>" class="item " id="quienes">
@@ -38,9 +41,10 @@
                       Servicios
                     </a>
                     <div id="menuServicios">
-                           <a href="<%= pyp_path %>" class="item " >Promocion y Prevencion</a>
-                           <a href="<%= ocupacional_path %>" class="item " >Salud Ocupacional</a>
-                           <a href="<%= laboral_path %>" class="item " >Medicina Laboral</a>
+                      <a href="<%= pyp_path %>" class="item " >Promocion y Prevencion</a>
+                      <a href="<%= ocupacional_path %>" class="item " >Salud Ocupacional</a>
+                      <a href="<%= laboral_path %>" class="item " >Medicina Laboral</a>
+                      <a href="<%= salud_trabajo_path %>" class="item " >Sistema de Seguridad Y Salud en el Trabajo</a>
                     </div>
                 </div>
                 <a href="<%= red_path %>" class="item " id="red">
@@ -53,16 +57,18 @@
         </div>
     </div>
 
-    <div class="login">
- <%=  image_tag("login.png", size: "79x30") %></td>
+    <div id="login">
+ <%=  image_tag("login.png", size: "79x30") %>
         
     </div>
 </div>
 
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 <%= yield %>
 
 <div class="ui demo vertical sidebar labeled icon menu pushed left right fixed">
-  <a href="<%= index_path %>" class="item" >
+  <a href="<%= admin_index_path %>" class="item" >
     Inicio
   </a>
   <a href="<%= quienes_somos_path %>" class="item">
@@ -80,8 +86,11 @@
   <a href="<%= red_path %>" class="item">
     Red Nacional
   </a>
+  <a href="<%= salud_trabajo_path%>" class="item">
+    Salud Trabajo
+  </a>
 </div>
-
+      
 
 <div class="ui basic modal">
     <div class="circuloContacto">
@@ -124,7 +133,6 @@
 
             <div class="actions">
             <div class="two fluid ui inverted buttons">
-
               <div class="ui ok green basic inverted button">
                 <i class="checkmark icon"></i>
                 Enviar
@@ -136,23 +144,76 @@
     
 </div>
 
+<!-- Modal login-->
+<div class="ui basic modal login" id="loginmodal">
+    <div class="circuloLogin">
+        <i class="close login icon" ></i>
+        <div class="contenedorFormularioLogin">
+
+        <%= form_for("persona", :url => persona_session_path) do |f| %>
+          <div class="ui form">
+            <div class="field">
+              <%= f.label :email, style:"color: #fff" %><br />
+              <%= f.email_field :email, autofocus: true %>
+            </div>
+          </div>
+          <div class="ui form">
+            <div class="field"><br />
+              <%= f.label :password, style:"color: #fff" %><br />
+              <%= f.password_field :password, autocomplete: "off", style:"color: #000" %>
+            </div>
+          </div>
+          <br/>          
+            
+              <div class="field">
+                <%= f.check_box :remember_me, style:"color: #fff" %>
+                <%= f.label :remember_me, style:"color: #fff" %>
+              </div>
+            
+                        
+              <%= f.submit "Ingresar", style: "background:none; border:1px solid #fff ;color:#fff;padding: 8px; width: 200px;" %>  
+          
+        <% end %>
+
+      <!--    <%# render "devise/shared/links" %> -->
+
+    </div>    
+</div>
+</div>
+
+
 
     <script>
+
        $("#menuCel").click(function() {
-        
+
            $('.ui.labeled.icon.sidebar').sidebar('toggle',{transition: 'overlay'});
        });
 
        $("#contacto").click(function() {
           $('.ui.basic.modal').modal('show');
+          $('.circuloLogin').hide();
+          
        });
+
 
        $(".close").click(function () {
            $('.ui.basic.modal').modal('hide')
        });
 
+
+       $("#login").click(function() {
+          $('.circuloLogin').show();
+          $('#loginmodal').modal('show');
+       });
+
+       $(".close.login").click(function () {
+           $('.ui.basic.modal.login').modal('hide')
+       });
+
        $('.ui.sticky')
         .sticky();
+
 
     </script>
 

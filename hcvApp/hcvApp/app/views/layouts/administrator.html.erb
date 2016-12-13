@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Health Care Workco</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+
+      <script src="http://momentjs.com/downloads/moment.min.js"> </script>
+  <title>HcvApp</title>
+  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true  %>
+  
+  <%= csrf_meta_tags %>
+
+
+</head>
+<body>
+
+
+<div class="ui sticky cont" id="contentmenu">
+    <div class="conlogo">
+          <%=  image_tag("logohcw.png") %>
+       <div class="menumovil">
+            <i class="big grid layout icon" id="menuCel" style="color: #675dc5"></i>
+        </div>
+    </div>
+
+<!-- MENU CLIENTE -->
+
+<% if current_persona.rols.nombre == 'Cliente' %>
+
+    <div class="conmenu">
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary pointing menu">
+                <a href="<%= agenda_citas_path %>" class="item" id="inicio">
+                  Reserva Citas
+                </a>
+                <a href="<%= citas_generadas_path %>" class="item " id="quienes">
+                  Tus Citas
+                </a>
+         
+                <a href="#" class="item " id="red">
+                  Datos
+                </a>
+                <a class="item" id="contacto">
+                  Pagos
+                </a>
+             </div>
+        </div>
+    </div>
+<% end %>
+
+<!-- MENU MEDICO -->
+
+<% if current_persona.rols.nombre == 'Medico' %>
+
+    <div class="conmenu">
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary pointing menu">
+                <a href="<%= consulta_dia_medico_path %>" class="item" id="inicio">
+                  Consultas del día
+                </a>
+                <a href="<%= quienes_somos_path %>" class="item " id="quienes">
+                  Mi Agenda
+                </a>
+
+                <a href="<%= reporte_medico_path 1 %>" class="item " id="quienes">
+                  Mi reporte
+                </a>
+         
+             </div>
+        </div>
+    </div>
+<% end %>
+
+<!-- MENU ADMINISTRADOR -->
+
+<% if current_persona.rols.nombre == 'Administrador' %>
+
+    <div class="conmenu">
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary pointing menu">
+               
+                <a href="<%= reportes_path %>" class="item " id="quienes">
+                  Reportes
+                </a>
+         
+                <a href="<%= proveedores_path %>" class="item " id="red">
+                  Proveedores
+                </a>
+                <a class="item" id="contacto">
+                  Pagos
+                </a>
+                <a href="<%= admin_perfiles_path %>" class="item" id="contacto">
+                  Perfiles
+                </a>
+             </div>
+        </div>
+    </div>
+<% end %>
+
+<!-- MENU CONFIRMAR CITAS -->
+
+<% if current_persona.rols.nombre == 'Confirmar Citas' %>
+
+    <div class="conmenu">
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary pointing menu">
+                <a href="<%= habilitar_consulta_path %>" class="item" id="inicio">
+                  Habilitar Consulta
+                </a>
+                <a href="<%= agenda_consultorios_path %>" class="item " id="quienes">
+                  Agenda Consultorios
+                </a>
+         
+                
+             </div>
+        </div>
+    </div>
+<% end %>
+
+    
+ 	<div id="login"> <%= link_to('Cerrar session', destroy_persona_session_path, :method => :delete, id: "login_admin") %></div>
+        
+
+</div>
+    
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       
+
+<%= yield %>
+
+
+<% if current_persona.rols.nombre == 'Cliente' %>
+  <div class="ui demo vertical sidebar labeled icon menu pushed left right fixed">
+    <a href="<%= admin_index_path %>" class="item" >
+      Reserva Citas
+    </a>
+    <a href="<%= quienes_somos_path %>" class="item">
+      Tus Citas
+    </a>
+    <a href="<%= pyp_path %>" class="item">
+      Datos
+    </a>
+    <a href="<%= ocupacional_path %>" class="item">
+      Pagos
+    </a>
+    
+  </div>
+<% end %>
+      
+
+
+
+    <script>
+       $("#menuCel").click(function() {        
+           $('.ui.labeled.icon.sidebar').sidebar('toggle',{transition: 'overlay'});
+       });
+
+       $('.ui.sticky')
+        .sticky();
+
+    </script>
+
+
+</body>
+
+
+</html>

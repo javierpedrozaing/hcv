@@ -1,0 +1,23 @@
+<div class="ui modal" id="modaleditcliente">
+      <i class="close icon"></i>
+      <div class="header"  style="background-color: #675dc5; color: #fff;">
+        Editar Cliente
+      </div>
+      <%= form_for @cliente , url: update_cliente_path(@cliente), html: {method: "patch", multipart: true}  do |f| %>
+              <div class="modal-body">
+              
+                <p>One fine body…</p>
+                
+              </div>
+      <% end %>
+    
+</div>
+
+
+<script>	
+console.log($('#modaleditcliente'));
+$modal = $('#modaleditcliente'),
+$modalBody = $('#modaleditcliente .modal-body'),
+$modalBody.html("<%= j render(:partial => 'administrador/edit_cliente') %>  ");
+$modal.modal({inverted: true}).modal('show');
+</script>

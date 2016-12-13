@@ -1,0 +1,7 @@
+console.log($('#modalshowperfil'));
+
+$modal = $('#modalshowperfil'),
+$modalBody = $('#modalshowperfil .modal-body'),
+$modalBody.html("<%= j render(:partial => 'perfils/show') %>  ");
+$modal.modal({inverted: true}).modal('show');
+

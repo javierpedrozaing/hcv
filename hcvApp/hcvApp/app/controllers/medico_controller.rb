@@ -1,5 +1,11 @@
 class MedicoController < ApplicationController
 
+	layout "administrator"	
+
+	
+	def reporte
+	end
+
 	def antecedentes
 	end
 

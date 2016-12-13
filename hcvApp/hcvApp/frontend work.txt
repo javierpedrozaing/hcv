@@ -1,0 +1,17 @@
+Los siguientes son elementos frontend que hacen falta implementar en la aplicación
+1. boton para logout
+2. View home cliente
+3. view home administrador hcw
+4. Mejorar visualización del popup crear medico
+5. Vista mi Agenda para el perfil de Médico
+
+
+# preguntas lógica del negocio
+
+En la vista tus citas, estas citas son de cada uno de los medicos? o de todos los medicos? quien ve este listado de citas, según el prototipo esta en el perfil de medico deberia salir entonces solo las citas de ese medico?
+
+Para la vista de administrador HCW no haria falta una opción de menu que diga gestion de perfiles? o como el administrador llega a esa vista?
+
+A donde dirige la opción del menú habilitar agenda para el perfil de hcw? se supone que habilita agenda para cada uno de los médicos pero en este caso no estaría seleccionando ningún medico como si sucede en el listado que se muestra en la vista de reporte
+
+para el perfil del medico haria falta una opción de menu para ir al reporte del médico que esta logeado? 

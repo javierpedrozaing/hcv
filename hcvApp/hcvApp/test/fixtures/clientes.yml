@@ -1,19 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nit: MyString
+  nit: 1
   tarifa: MyString
   tipo_cuenta: MyString
   numero_cuenta: 1
   banco: MyString
   tipo_negociacion: MyString
-  id_persona: 1
+  eventos_salud_ocupacional: MyString
+  eventos_medicina_laboral: MyString
+  persona_id: 
 
 two:
-  nit: MyString
+  nit: 1
   tarifa: MyString
   tipo_cuenta: MyString
   numero_cuenta: 1
   banco: MyString
   tipo_negociacion: MyString
-  id_persona: 1
+  eventos_salud_ocupacional: MyString
+  eventos_medicina_laboral: MyString
+  persona_id: 

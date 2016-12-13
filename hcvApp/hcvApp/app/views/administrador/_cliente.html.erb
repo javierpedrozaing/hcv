@@ -1,0 +1,119 @@
+<div class="image content">
+          <div class="formedico" style="width: 98%; margin: auto ">
+          
+              <div class="imgmedico">
+              <%= image_tag @cliente.persona.photo.url, class: "ui small circular image",  style:"margin: auto;border: solid #675dc5 5px;margin-top: -2px;" %> 
+              </div>
+              <h2 class="ui header">INFORMACIÓN</h2>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Nombre</label>
+                    
+                    <input value="<%= @cliente.persona.nombre_completo %>" readonly="" type="text">
+                  </div>
+                  <div class="field">
+                    <label>NIT</label>
+                    <input value="<%= @cliente.nit %>" readonly="" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Servicios</label>
+                      <input value="<%= @cliente.servicios %>" readonly="" type="text">
+                    </div>
+                    <div class="field">
+                      <label>Tarifa</label>
+                      <input value="<%= @cliente.tarifa %>" readonly="" type="text">
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Banco</label>
+                      <input value="<%= @cliente.banco %>" readonly="" type="text">
+                    </div>
+                    <div class="field">
+                       <label>Tipo de cuenta</label>
+                       <div class="ui selection dropdown disabled">
+                          <input type="hidden" name="gender">
+                           <input value="<%= @cliente.tipo_cuenta %>" readonly="" type="text">
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1" >Corriente</div>
+                            <div class="item" data-value="0">Ahorros</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                    <label>N° de Cuenta</label>
+
+                    <input value="<%= @cliente.tipo_cuenta %>" readonly="" type="text">
+                  </div>
+                    <div class="field">
+                       <label>Tipo de Negociación</label>
+                       <div class="ui selection dropdown disabled">
+                          <input type="hidden" name="gender">
+                           <input value="<%= @cliente.tipo_negociacion %>" readonly="" type="text">
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1">Bogota</div>
+                            <div class="item" data-value="0">Medellin</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <h4 class="ui header">DATOS PERSONALES DE CONTACTO</h4>
+
+              <div class="ui tiny form"  style="margin-bottom: 10px;">
+                  <div class="field">
+                    <label>Nombre y Apellido</label>
+                    <input value="<%= @cliente.persona.nombre_completo %>" readonly="" type="text">
+                    
+                  </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Celular</label>
+                    <input value="<%= @cliente.persona.celular %>" readonly="" type="text">
+                  </div>
+                  <div class="field">
+                    <label>E-mail</label>
+                    <input value="<%= @cliente.persona.email %>" readonly="" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Telefono</label>
+                    <input value="<%= @cliente.persona.telefono %>" readonly="" type="text">
+                  </div>
+                    <div class="field">
+                    <label>Dirección</label>
+                    <input value="<%= @cliente.persona.direccion %>" readonly="" type="text">
+                  </div>
+                </div>
+              </div>          
+          </div>
+      </div>

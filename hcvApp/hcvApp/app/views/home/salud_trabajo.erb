@@ -1,0 +1,75 @@
+<style>
+  .boxlistado h3{
+    font-size: 22px;
+    color: #685FC8;
+  }
+  .boxlistado p{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    color: #575759;
+    text-align: justify;
+  }
+  #imagenleft{
+    margin-top: 100px;
+  }
+</style>
+
+<div class="banner_laboral">
+  <div class="boxcont">
+    <p class="titulo">Sistema de Seguridad Y Salud en el Trabajo</p>
+    <div class="lineb"></div>
+    <div class="circb"></div>
+    <p class="parrafo">
+      SGSST, HCW ha clasificado en cuatro etapas estas actividades, las cuales se muestran a continuación:
+    </p>
+  </div>
+
+  <div class="titulocentro">
+    <h1>Servicios</h1>
+  </div>
+</div>
+
+<div class="ui container grid segment" >
+  <div class="six wide column doubling" id="imagenleft">
+    <%= image_tag "seguridad.jpg", size: "400x588" %>
+  </div>
+  <div class="ten wide column doubling" id="textrigth">
+    <div class="infoQuienes" id="espacioblanco">
+      <div class="boxlistado">
+        <h3>● EDUCACIÓN</h3>
+        <p>Dentro de esta etapa se fomentan las condiciones de trabajo y para ello es importante tener en cuenta todo lo relacionado a las capacitaciones de interés de nuestro cliente,
+          es por esto que HCW coloca a disposición el personal capacitado en los desarrollo de estas con el fin de contribuir al optimo manejo de los trabajadores en Seguridad y Salud en el trabajo.
+          La totalidad de capacitaciones que HCW ha desarrollado CORSO Y CIA, se determinaran de acuerdo a las necesidad de nuestro cliente en acompañamiento con el Líder de SST que colocaremos
+          en las instalaciones del mismo.
+        </p>
+        <h3>● COMUNICACIÓN</h3>
+        <p>Con la implementación del sistema de Gestión y Seguridad en el trabajo, se pretende mejorar la calidad de vida y salud de los trabajadores, la principal manera de llegar a una
+          persona es realizando un excelente proceso de comunicación interna y externa, por tal motivo dentro de esta etapa HCW presenta todo tipo de actividades de interés para la compañía.
+        </p>
+        <h3>● ACOMPAÑAMIENTO</h3>
+        <p>Para HCW es fundamental garantizar un excelente servicio de calidad para nuestros clientes, por tal motivo realizamos el respectivo acompañamientos en cada una de las etapas de
+          la implementación del SGSST, con el fin de satisfacer a nuestro cliente y principalmente de promover y mantener  el mayor grado de bienestar físico, mental y social de los trabajadores
+          de nuestros clientes. Cada asesoría cuenta con un especialista en el tema, el cual se dirige a las instalaciones de nuestro cliente de ser necesario.
+        </p>
+        <h3>● SO</h3>
+        <p>El marco legal está dado por lineamientos constitucionales, normas generales del Código Sustantivo del Trabajo, según el decreto 1072 de 2015 el cual hace obligatorio la
+          implementación de un Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST) en las organizaciones. Una de las etapas de implementación es todo lo relacionado con Salud
+          Ocupacional, dentro del recurso asistencial con el que cuenta HCW se encuentran médicos especialistas en Salud Ocupacional, Optómetras, Fonoaudiólogos y demás personal el cual
+          ponemos a su disposición, con el fin de dar soporte a todas sus necesidades, además contamos con 5 sedes de laboratorio para la toma de los mismos o vacunas necesarias
+          para nuestro cliente.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</div>
+
+<%= render partial: "footer" %>
+
+<script>
+  $('#servicios').addClass('active');
+</script>

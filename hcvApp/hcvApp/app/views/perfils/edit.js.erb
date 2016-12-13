@@ -1,0 +1,5 @@
+console.log($('#modaleditperfil'));
+$modal = $('#modaleditperfil'),
+$modalBody = $('#modaleditperfil .modal-body'),
+$modalBody.html("<%= j render(:partial => 'perfils/edit') %>  ");
+$modal.modal({inverted: true}).modal('show');

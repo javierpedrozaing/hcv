@@ -18,4 +18,7 @@ class HomeController < ApplicationController
 	def red
 	end
 
+	def salud_trabajo
+	end
+
 end

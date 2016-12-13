@@ -1,0 +1,163 @@
+<div class="image content">
+<% if @persona.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@persona.errors.full_messages.uniq.count, t("error")) %> no permiten guardar el cliente correctamente</h2>
+
+          <ul>
+          <% @persona.errors.full_messages.uniq.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+<% end %>
+          <div class="formedico" style="width: 98%; margin: auto ">
+              <div class="imgmedico">
+              <div class="editimg" style="width: 34px;margin: auto;">
+                    <%= file_field :persona, :photo, :multiple => false, accept: 'image/png,image/gif,image/jpeg' do %>
+                      <div class="bordered inverted violet write icon"></div> 
+                    <% end %>
+              </div>
+                    
+              <%= image_tag @cliente.persona.photo.url, class: "ui small circular image",  style:"margin: auto;border: solid #675dc5 5px;margin-top: -2px;" %> 
+              </div>
+
+              <div style="float: right;">
+                <label for="">Habilitar usuario</label>
+                <%= check_box_tag :activo, '', @cliente.activo %>
+              </div>
+
+
+              <h2 class="ui header">INFORMACIÓN</h2>
+              <%= text_field_tag "cliente[rol]", "Cliente", hidden: true%> 
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Nombre</label>
+                    <input value="<%= @cliente.persona.nombre_completo %>" name="persona[nombre_completo]" type="text">                    
+                  </div>
+                  <div class="field">
+                    <label>NIT</label>
+                    <input value="<%= @cliente.nit %>" name="cliente[nit]" type="text">                  
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Servicios</label>
+                      <input value="<%= @cliente.servicios %>" name="cliente[servicios]" type="text">                      
+                    </div>
+                    <div class="field">
+                      <label>Tarifa</label>
+                      <input value="<%= @cliente.tarifa %>" name="cliente[tarifa]" type="text">
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                      <label>Banco</label>
+                      <input value="<%= @cliente.banco %>" name="cliente[banco]" type="text">
+                    </div>
+                    <div class="field">
+                       <label>Tipo de cuenta</label>
+                       <div class="ui selection dropdown disabled">
+                          <input type="hidden" name="gender">
+                           <input value="<%= @cliente.tipo_cuenta %>" name="cliente[tipo_cuenta]" type="text">
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1" >Corriente</div>
+                            <div class="item" data-value="0">Ahorros</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                    <div class="field">
+                    <label>N° de Cuenta</label>
+
+                    <input value="<%= @cliente.numero_cuenta %>" name="cliente[numero_cuenta]" type="text">
+                  </div>
+                    <div class="field">
+                       <label>Tipo de Negociación</label>
+                       <div class="ui selection dropdown disabled">
+                          <input type="hidden" name="gender">
+                           <input value="<%= @cliente.tipo_negociacion %>" name="cliente[tipo_negociacion]" type="text">
+                          <i class="dropdown icon"></i>
+                          <div class="default text"> </div>
+                          <div class="menu">
+                            <div class="item" data-value="1">Bogota</div>
+                            <div class="item" data-value="0">Medellin</div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              
+               <div class="ui tiny form"  style="margin-bottom: 10px;">
+                  <div class="two fields">
+                  <div class="field">
+                    <label>Perfil</label>
+                    <%= select_tag "perfiles", options_from_collection_for_select(@perfiles, "id", "nombre", @perfils_cliente), multiple: true %>
+                  </div>
+                  </div>
+              </div>
+
+              <h4 class="ui header">DATOS PERSONALES DE CONTACTO</h4>
+
+              <div class="ui tiny form"  style="margin-bottom: 10px;">
+                  <div class="field">
+                    <label>Nombre y Apellido</label>
+                    <input value="<%= @cliente.persona.nombre_completo %>" name="persona[nombre_completo]" type="text">
+                    
+                  </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Celular</label>
+                    <input value="<%= @cliente.persona.celular %>" name="persona[celular]" type="text">
+                  </div>
+                  <div class="field">
+                    <label>E-mail</label>
+                    <input value="<%= @cliente.persona.email %>" name="persona[email]" type="text">
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui tiny form">
+                <div class="two fields">
+                  <div class="field">
+                    <label>Telefono</label>
+                    <input value="<%= @cliente.persona.telefono %>" name="persona[telefono]" type="text">
+                  </div>
+                    <div class="field">
+                    <label>Dirección</label>
+                    <input value="<%= @cliente.persona.direccion %>" name="persona[direccion]" type="text">
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+</div>
+  <div class="actions">
+      <%= link_to proveedores_path do %>
+        <div class="ui black deny button">Cancelar</div>  
+      <% end %>
+        <%= button_tag(type: 'submit') do %>
+          <div class= "ui positive right labeled icon button">
+            Actualizar          
+          </div>
+        <% end %>
+        
+</div>

@@ -1,0 +1,19 @@
+clientes/proveedores perfil administrador
+
+EN que momento se le asigna al cliente un perfil? cuando se crea un cliente? si es así hace falta el campo perfil en el formulario de crear cliente?
+
+En que momento se le asigna al cliente la especialidad? debería tambien estar en el formulario de crear cliente ?
+
+para eliminar o editar un cliente pienso que sería mejor que salieran esos iconos de eliminar y editar al lado del boton detalles de esta forma
+se sabe mejor que cliente se esta eliminando y no hay necesidad de seleccionar un cliente y darle despues al icono eliminar o editar
+
+cuales son los tipos de reporte?, en el perfil administrador en las secciones de reporte y clientes  hay un select para filtrar por tipo reporte, esto quiere decir: que cada cliente tiene un tipo de reporte? y cada reporte tiene un tipo reporte?
+
+recursos de Imagenes que hacen falta
+
+fondo home perfiles cliente, administrador, medico, confirmacion citas
+logo color blanco
+
+Página principal
+Veo que en el nuevo prototipo en la pagina inicial hay un boton  que dice "genera citas". este boton a donde va? supongo que deberia ir al popup de loguiarse con algun perfil, porque no todo el mundo podria citas sin estar logueado primero.
+

@@ -1,32 +1,16 @@
-<p>index</p>
-{#{% for a in dola  %}#}
-{#    <p>{{ a }}</p>#}
-{#{% endfor %}#}
+<% if current_persona.rols.nombre == 'Cliente' %>
+    <%= render :partial => "home_cliente" %>
+<% end %>
 
-{% for a in var  %}
-    <p>{{ a.nombre }}</p>
-{% endfor %}
+<% if current_persona.rols.nombre == 'Medico' %>
+    <%= render :partial => "home_medico" %>
+<% end %>
 
+<% if current_persona.rols.nombre == 'Administrador' %>
+    <%= render :partial => "home_administrador" %>
+<% end %>
 
+<% if current_persona.rols.nombre == 'Confirmar Citas' %>
+    <%= render :partial => "home_confirmacion_citas" %>
+<% end %>
 
-<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-
-<table style="width:50%">
-  <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Edad</th>
-  </tr>
-    {% for a in var  %}
-        <tr>
-            <td>{{ a.nombre }}</td>
-            <td>{{ a.apellido }}</td>
-            <td>{{ a.edad }}</td>
-        </tr>
-    {% endfor %}
-
-    </table>

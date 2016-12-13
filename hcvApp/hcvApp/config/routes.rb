@@ -1,42 +1,82 @@
 Rails.application.routes.draw do
   
+  resources :especialidads
+  resources :consultorios
+  #resources :personas
   
-  resources :personas
+  resources :tipo_examenes
+  resources :perfils
+  resources :examenes
+  resources :rols
 
-  get 'cliente/agenda_citas' => 'cliente#agenda_citas', as: 'agendacitas'
+  get 'cliente/agendacitas', as: "agenda_citas"
+  get 'cliente/citas_generadas' => 'cliente/citas_generadas', as: "citas_generadas"
+
+  get 'administrador' => "administrador#index", as: 'admin_index'
+  get 'administrador/clientes' => "administrador#clientes", as: 'proveedores'
+  get 'administrador/cliente/:id' => "administrador#reporte_cliente", as: 'reporte_cliente' #reporte del cliente
+  get 'administrador/medico' => "administrador#admin_medico", as: "reportes" # reportes por medico
+  post 'administrador/registrar' => "administrador#registrar_medico" 
+  get 'administrador/medico/:id' => "administrador#medico" # reporte del medico
+  get "administrador/perfiles" => "perfils#index", as: 'admin_perfiles'
+
+  get "administrador/upload_photo_cliente" => "administrador#upload_photo_cliente", as: 'upload_photo_cliente'
+  
+
+  post "administrador/crear_cliente" => "administrador#crear_cliente", as: 'crear_cliente'  #post para crear cliente
+  get 'administrador/show_cliente/:id' => "administrador#show_cliente", as: "show_cliente"
+  get 'administrador/edit_cliente/:id' => "administrador#edit_cliente", as: "edit_cliente"
+  get 'administrador/delete_cliente/:id' => "administrador#delete_cliente", as: "delete_cliente"
+  delete 'administrador/delete_cliente/:id' => "administrador#delete_cliente"
+
+  patch 'administrador/update_cliente/:id' => "administrador#update_cliente", as: "update_cliente"
+  put 'administrador/update_cliente/:id' => "administrador#update_cliente"
 
 
-  get 'administrador' => "administrador#index"
-  get 'administrador/cliente' => "administrador#clientes"
-  get 'administrador/cliente/:id' => "administrador#detalle_cliente"
-  get 'administrador/medico' => "administrador#admin_medico"
-  post 'administrador/registrar' => "administrador#registrar_medico"
-
-  get 'administrador/medico/:id' => "administrador#medico"
-  get "administrador/perfiles" => "administrador#perfiles"
-
-  get 'autorizador/consulta' => "autorizador#consulta"
+  get 'autorizador/consulta' => "autorizador#consulta", as: 'habilitar_consulta'
   get 'autorizador/informacioninicial' => "autorizador#informacion_inicial"
   get 'autorizador/historialocupacional' => "autorizador#historial_ocupacional"
-  get 'autorizador/agenda' => "autorizador#agenda"
+  get 'autorizador/agenda' => "autorizador#agenda", as: 'agenda_consultorios'
+
+  get 'autorizador/consulta' => "autorizador#consulta", as: 'consulta_dia_medico' # cosulta dle día para el perfil medico
   
+
+  get 'medico/:id' => "medico#reporte", as: 'reporte_medico' # reporte del medico
   get 'medico/antecedentes' => "medico#antecedentes"
   get 'medico/antecedentes1' => "medico#antecedentes1"
   get 'medico/antecedentes2' => "medico#antecedentes2"
   get 'medico/antecedentes3' => "medico#antecedentes3"
   get 'medico/antecedentes4' => "medico#antecedentes4"
 
+  post 'perfils/get_examenes' => 'perfils#get_examenes', as: 'get_examenes'
+
+  devise_for :personas
+
+  devise_scope :persona do
+
+    authenticated :persona do
+            
+      root 'administrador#index', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index', as: "index"
+  root 'home#index', as: "home"
   get "quienes_somos" => "home#quienes_somos" , as: 'quienes_somos' 
   get "pyp" => "home#pyp" , as: 'pyp' 
   get "ocupacional" => "home#ocupacional" , as: 'ocupacional' 
   get "laboral" => "home#laboral" , as: 'laboral' 
-  get "red" => "home#red" , as: 'red' 
-
+  get "red" => "home#red" , as: 'red'
+  get "salud_trabajo" => "home#salud_trabajo" , as: 'salud_trabajo'
 
 
 

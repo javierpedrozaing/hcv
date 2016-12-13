@@ -40,7 +40,7 @@
             vertical-align: top;
             margin-left: 2%;
         }
-        .login{
+        #login{
             display: inline-block;
             border: solid blue 1px;
             margin-top: 2%;
@@ -55,7 +55,7 @@
             background-repeat: no-repeat;
             width:100%;
             background-size: 100% 12vw;
-            background-image: url('pie.png');
+            background-image: url('/assets/pie.png');
         }
         .pieCel p {
             color: #fff;
@@ -109,6 +109,14 @@
         .circuloContacto{
             width: 570px;
             height: 570px;
+            background-image: url('/assets/iconocitaazulgrande.png');
+            background-size: cover;
+            margin: auto;
+        }
+
+        .circuloLogin{
+            width: 400px;
+            height: 400px;
             background-image: url('iconocitaazulgrande.png');
             background-size: cover;
             margin: auto;
@@ -117,6 +125,13 @@
             width: 50%;
             margin-left: 25%;
             margin-top: 20%;
+        }
+
+        .contenedorFormularioLogin{
+            width: 50%;
+            margin-left: 28%;
+            margin-top: 20%;
+            
         }
         .close{
            cursor: pointer;
@@ -155,7 +170,7 @@
              .conmenu{
                  display: none;
              }
-             .login{
+             #login{
                  display: none;
              }
              .conlogo{
@@ -206,21 +221,21 @@
         width: 1000px;
     }
     .circulo1{
-        background-image: url('iconocitaazul.png');
+        background-image: url('/assets/iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
         cursor: pointer;
     }
     .circulo2{
-        background-image: url('iconocitaazul.png');
+        background-image: url('/assets/iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
         cursor: pointer;
     }
     .circulo3{
-        background-image: url('iconocitaazul.png');
+        background-image: url('/assets/iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
@@ -250,7 +265,7 @@
             height: 245px;
             background-size: cover;
             background-position: center center;
-            background-image: url("fondoinicio.jpg");
+            background-image: url("/assets/fondoinicio.jpg");
         }
         .copyCel{
             display: none;
@@ -287,12 +302,12 @@
     .cuadro{
         width: 100%;
     }
-            .line{
+        .line{
             width:38%;
             border: solid #675dc5 1px;
             display: inline-block;
             vertical-align: top;
-            margin-top: -12px;
+            margin-top: 0px;
         }
         .circ{
             width: 10px;
@@ -302,7 +317,7 @@
             display: inline-block;
             vertical-align: top;
             margin-left: -3px;
-            margin-top: -16px;
+            margin-top: -4px;
         }
     .encabezado{
         width: 100%;
@@ -450,3 +465,12 @@
         }
     }
 
+
+i:hover{
+    background-color: transparent;
+
+}
+a:hover{
+    background-color: transparent;
+
+}

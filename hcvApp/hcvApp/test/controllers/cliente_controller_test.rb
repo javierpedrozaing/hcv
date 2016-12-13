@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class ClienteControllerTest < ActionController::TestCase
-  test "should get agenda_citas" do
-    get :agenda_citas
+  test "should get agendacitas" do
+    get :agendacitas
     assert_response :success
   end
 

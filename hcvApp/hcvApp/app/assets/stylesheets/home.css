@@ -1,22 +1,8 @@
-    .banner#pyp {
-        position: relative;
-        width: 100%;
-        min-height: 40.5vw;
-        background-image: url('banner-pyp.png');
-        background-size: 100vw 40.5vw ;
-        background-repeat: no-repeat ;
-        background-position: center center;
-        padding-top: 130px;
-        padding-left:8%;
-        padding-right:8%;
-        box-sizing: border-box;
-            }
-
-  .banner_ocupacional{
+  .banner#pyp {
       position: relative;
       width: 100%;
       min-height: 40.5vw;
-      background-image: url('banner-ocupacional.png');
+      background-image: url('/assets/banner-pyp.png');
       background-size: 100vw 40.5vw ;
       background-repeat: no-repeat ;
       background-position: center center;
@@ -24,20 +10,51 @@
       padding-left:8%;
       padding-right:8%;
       box-sizing: border-box;
-      }
+  }
 
-    #banner_home{
-        position: relative;        
-        min-height: 40.5vw;
-        background-image: url('fondoinicio.jpg');
-        background-size: 100vw;
-        background-repeat: no-repeat ;
-        background-position: center center;
-        padding-top: 130px;
-        padding-left:8%;
-        padding-right:8%;
-        box-sizing: border-box;
-    }
+  .banner_ocupacional{
+      position: relative;
+      width: 100%;
+      min-height: 40.5vw;
+      background-image: url('/assets/banner-ocupacional.png');
+      background-size: 100vw 40.5vw ;
+      background-repeat: no-repeat ;
+      background-position: center center;
+      padding-top: 130px;
+      padding-left:8%;
+      padding-right:8%;
+      box-sizing: border-box;
+  }
+
+  #banner_home{
+      position: relative;
+      min-height: 40.5vw;
+      background-image: url('/assets/fondoinicio.jpg');
+      background-size: 100vw;
+      padding-top: 130px;
+      padding-left:8%;
+      padding-right:8%;
+      box-sizing: border-box;
+      height: 87.4vh;
+      background-repeat:no-repeat;
+      background-position:center;
+      display: flex;
+      top: 0;
+  }
+
+  #banner_home_admin{
+      position: relative;
+      min-height: 40.5vw;
+      background-image: url('/assets/banner-pyp.png');
+      background-size: 150vw;
+
+      box-sizing: border-box;
+      height: 100vh;
+      background-repeat:no-repeat;
+      background-position:center;
+      display: flex;
+      top: 0;
+  }
 
 
     .pieCel{
@@ -58,21 +75,21 @@
         width: 1000px;
     }
     .circulo1{
-        background-image: url('iconocitaazul.png');
+        background-image: url('/assets/iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
         cursor: pointer;
     }
     .circulo2{
-        background-image: url('iconocitaazul.png');
+        background-image: url('/assets/iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
         cursor: pointer;
     }
     .circulo3{
-        background-image: url('iconocitaazul.png');
+        background-image: url('/assets/iconocitaazul.png');
         width: 200px;
         height: 200px;
         background-size: cover;
@@ -102,7 +119,7 @@
             height: 245px;
             background-size: cover;
             background-position: center center;
-            background-image: url("fondoinicio.jpg");
+            background-image: url("/assets/fondoinicio.jpg");
         }
         .copyCel{
             display: none;
@@ -139,7 +156,7 @@
             position: relative;
             width: 100%;
             min-height: 40.5vw;
-            background-image: url('banner_quienes.png');
+            background-image: url('/assets/banner_quienes.png');
             background-size: 100vw 40.5vw ;
             background-repeat: no-repeat ;
             background-position: center center;
@@ -266,7 +283,7 @@
                 padding: 0;
                 height: 245px;
                 background-size: 600px 245px;
-                background-image: url("banner-red.png") ;
+                background-image: url("/assets/banner-red.png") ;
             }
             #marcoGeneral{
 
@@ -398,13 +415,13 @@
                 padding: 0;
                 height: 245px;
                 background-size: 600px 245px;
-                background-image: url('banner-red.png') ;
+                background-image: url('/assets/banner-red.png') ;
             }
             #marcoGeneral{
 
             }
             .infoQuienes{
-                padding-top: 10px;|
+                padding-top: 10px;
             }
             .infoQuienes h2{
                 font-size: 18px;
@@ -456,7 +473,7 @@
         position: relative;
         width: 100%;
         min-height: 40.5vw;
-        background-image: url('banner-laboral.png');
+        background-image: url('/assets/banner-laboral.png');
         background-size: 100vw;
         background-repeat: no-repeat ;
         background-position: center center;
@@ -472,7 +489,7 @@
               position: relative;
               width: 100%;
               min-height: 40.5vw;
-              background-image: url('banner-red.png');
+              background-image: url('/assets/banner-red.png');
               background-size: 100vw 40.5vw ;
               background-repeat: no-repeat ;
               background-position: center center;

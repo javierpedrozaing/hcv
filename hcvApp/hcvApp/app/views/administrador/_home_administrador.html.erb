@@ -1,0 +1,24 @@
+<div id="banner_home_admin">
+	<div class="conlogo" id="admin_logo">
+          <%=  image_tag("logohcw.png") %>
+       <div class="menumovil">
+            <i class="big grid layout icon" id="menuCel" style="color: #675dc5"></i>
+        </div>
+    </div>
+
+    <div class="content_perfil">
+    	<%= image_tag "imagen-pyp.jpg", class:"ui small circular image" %>                  
+    	<p> <%= @persona.nombre_completo %></p>
+    </div>
+
+ <%= link_to('Cerrar session', destroy_persona_session_path, :method => :delete, id: "login_admin") %>
+	<a href="<%= admin_perfiles_path %>" class="item " >		
+		<div class="circulo1" id="circulo_admin">	            
+	        <p class="txt1">SIGUIENTE</p>           
+	    </div>
+    </a>
+</div>
+
+<script>
+	$("#contentmenu").hide();
+</script>

@@ -1,4 +1,6 @@
 class AutorizadorController < ApplicationController
+	
+	layout "administrator"
 
 	def consulta
 	end

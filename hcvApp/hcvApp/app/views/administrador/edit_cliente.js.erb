@@ -1,0 +1,5 @@
+console.log($('#modaleditcliente'));
+$modal = $('#modaleditcliente'),
+$modalBody = $('#modaleditcliente .modal-body'),
+$modalBody.html("<%= j render(:partial => 'administrador/edit_cliente') %>  ");
+$modal.modal({inverted: true}).modal('show');

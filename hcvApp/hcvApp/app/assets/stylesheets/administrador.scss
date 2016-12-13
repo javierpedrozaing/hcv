@@ -1,3 +1,52 @@
-// Place all the styles related to the Administrador controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#login_admin{
+	height: 30px;
+    right: 5%;
+    position: absolute;
+    top: 5%;
+    background: #fff;
+    border:1px solid #645DC3;
+    border-radius: 5%;
+    padding: 5px 10px;
+}
+
+#admin_logo{
+	background: #fff;
+	height: 100px;
+	margin:5px;
+}
+
+#circulo_admin{
+    position: absolute;
+    top: 35%;
+    right: 20%;
+
+}
+
+#circulo_admin p{
+	font-weight: bold;
+	font-size: 1.5em;
+	vertical-align: middle;
+	position: relative;
+	top: 0.8em;
+}
+
+.content_perfil{
+	margin: auto;
+	border: solid #675dc5;
+	position: absolute;
+	top: 30%;
+}
+
+.content_perfil p{
+	color: #fff;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.icon_eliminar, .icon_editar{
+	position:relative;
+	display:inline-block;
+
+}

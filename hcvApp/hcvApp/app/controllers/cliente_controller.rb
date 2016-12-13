@@ -1,5 +1,9 @@
 class ClienteController < ApplicationController
-	
-  def agenda_citas
+	layout "administrator"	
+  def agendacitas
+  end
+
+  def citas_generadas
+
   end
 end

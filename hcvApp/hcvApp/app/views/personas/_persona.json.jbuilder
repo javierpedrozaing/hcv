@@ -1,2 +1,0 @@
-json.extract! persona, :id, :nombre, :apellidos, :edad, :genero, :direccion, :telefono, :celular, :estado_civil, :fecha_nacimiento, :created_at, :updated_at
-json.url persona_url(persona, format: :json)

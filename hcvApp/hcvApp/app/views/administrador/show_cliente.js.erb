@@ -1,0 +1,4 @@
+$modal = $('#modaldetalle'),
+$modalBody = $('#modaldetalle .modal-body'),
+$modalBody.html("<%= j render 'cliente' %>  ");
+$modal.modal({inverted: true}).modal('show');
